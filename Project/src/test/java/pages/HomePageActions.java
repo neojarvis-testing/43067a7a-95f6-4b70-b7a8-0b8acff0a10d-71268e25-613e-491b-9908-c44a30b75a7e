@@ -23,25 +23,25 @@ public class HomePageActions {
     }
   
    public void healthLibrary(){
-        helper.clickTheElement(HomePageLocators.healthLibrary);
+        driverHelper.clickTheElement(HomePageLocators.healthLibrary);
     }
     public void institute(){
-        helper.clickTheElement(HomePageLocators.institueAndDepat);
+        driverHelper.clickTheElement(HomePageLocators.institueAndDepat);
     }
   
   public void searchOperation() throws Exception
 {
-    help.clickTheElement(HomePageLocators.search);
-    help.clickTheElement(HomePageLocators.searchbar);
-    help.typeText(HomePageLocators.searchbar, "Respiratory");
+    driverHelper.clickTheElement(HomePageLocators.search);
+    driverHelper.clickTheElement(HomePageLocators.searchbar);
+    driverHelper.typeText(HomePageLocators.searchbar, "Respiratory");
    
-    help.pressEnter(HomePageLocators.searchbar);
+    driverHelper.pressEnter(HomePageLocators.searchbar);
     String title = Base.driver.getTitle();
-    help.verifyTitle(title);
+    driverHelper.verifyTitle(title);
     
-    help.waitForClickability(HomePageLocators.firstResp, 2);
-     help.clickTheElement(HomePageLocators.firstResp);
-     help.retrieveText(HomePageLocators.verifyResp);
+    driverHelper.waitForClickability(HomePageLocators.firstResp, 2);
+     driverHelper.clickTheElement(HomePageLocators.firstResp);
+     driverHelper.retrieveText(HomePageLocators.verifyResp);
 }
   
 public void searchAll() throws Exception

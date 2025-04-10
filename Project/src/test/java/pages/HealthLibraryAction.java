@@ -14,7 +14,7 @@ public class HealthLibraryAction {
     public void diseaseAndCondition() {
 
         //driverHelper.retrieveText(ExcelReader.readCellValue("Sheet1", "10", "value"));
-        driverHelper.ClickTheElement(HomePageLocators.healthLibrary_diseaseAndCondition);
+        driverHelper.clickTheElement(HomePageLocators.healthLibrary_diseaseAndCondition);
         driverHelper.waitForVisibility(HomePageLocators.healthLibrary_diseaseAndConditionNew, 2);
      //   System.out.println(driverHelper.retrieveText(HomePageLocators.healthLibrary_diseaseAndConditionNew));
         //driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "1", "value"));
@@ -36,7 +36,7 @@ public class HealthLibraryAction {
 
     public void diagnosticsAndTesting() {
 
-        driverHelper.ClickTheElement(HomePageLocators.healthLibrary_diagnosticsAndTesting);
+        driverHelper.clickTheElement(HomePageLocators.healthLibrary_diagnosticsAndTesting);
       //  driverHelper.waitForVisibility(HomePageLocators.healthLibrary_diagnosticsAndTestingNew, 2);
         //driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "3", "value"));
         driverHelper.waitForVisibility(HomePageLocators.healthLibrary_diagnosticsAndTestingNew, 2);
@@ -46,7 +46,7 @@ public class HealthLibraryAction {
 
     public void treatmentsAndProcedure() {
 
-        driverHelper.ClickTheElement(HomePageLocators.healthLibrary_treatmentsAndProcedure);
+        driverHelper.clickTheElement(HomePageLocators.healthLibrary_treatmentsAndProcedure);
         driverHelper.waitForVisibility(HomePageLocators.healthLibrary_treatmentsAndProcedureNew, 2);
         //driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "5", "value"));
         driverHelper.waitForVisibility(HomePageLocators.healthLibrary_treatmentsAndProcedureNew, 2);
@@ -55,7 +55,7 @@ public class HealthLibraryAction {
     }
 
     public void bodySystemsAndOrgans() {
-        driverHelper.ClickTheElement(HomePageLocators.healthLibrary_bodySystemsAndOrgans);
+        driverHelper.clickTheElement(HomePageLocators.healthLibrary_bodySystemsAndOrgans);
          driverHelper.waitForVisibility(HomePageLocators.healthLibrary_bodySystemsAndOrgansNew, 2);
         // driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "7", "value"));
          driverHelper.waitForVisibility(HomePageLocators.healthLibrary_bodySystemsAndOrgansNew, 2);
@@ -68,7 +68,7 @@ public class HealthLibraryAction {
     }
 
     public void drugsDevicesSupplements() {
-        driverHelper.ClickTheElement(HomePageLocators.healthLibrary_drugsDevicesSupplements);
+        driverHelper.clickTheElement(HomePageLocators.healthLibrary_drugsDevicesSupplements);
         driverHelper.waitForVisibility(HomePageLocators.healthLibrary_drugsDevicesSupplementsNew, 2);
        // driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "9", "value"));
         Base.driver.navigate().back();

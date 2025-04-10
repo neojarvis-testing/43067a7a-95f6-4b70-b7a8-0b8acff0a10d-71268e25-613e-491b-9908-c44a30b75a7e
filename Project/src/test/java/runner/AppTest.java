@@ -24,7 +24,7 @@ public class AppTest extends Base{
     ExtentReports reports;
     @BeforeClass
     public void report(){
-        reports=ReportHelper.initializeReport("name");
+        reports=ReportHelper.createExtentReporter("name");
     }
     @BeforeMethod
     public void setBrowser(){
@@ -59,7 +59,7 @@ public class AppTest extends Base{
    
     @AfterMethod
     public void driverClose(){
-        //driver.quit();
+        driver.quit();
     }
     @AfterClass
     public void FlushReports(){

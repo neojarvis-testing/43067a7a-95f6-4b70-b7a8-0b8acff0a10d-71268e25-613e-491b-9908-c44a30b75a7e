@@ -31,8 +31,8 @@ public class ForProviders {
     //    // Base.driver.switchTo().defaultContent();
 
     String mainWindowHandle = Base.driver.getWindowHandle();
-        driverHelper.ClickTheElement(HomePageLocators.forProviders_joinOurNursingTeam);
-        driverHelper.ClickTheElement(HomePageLocators.forProviders_nursingAtCleveland);
+        driverHelper.clickTheElement(HomePageLocators.forProviders_joinOurNursingTeam);
+        driverHelper.clickTheElement(HomePageLocators.forProviders_nursingAtCleveland);
         driverHelper.switchWindow();
         System.out.println(Base.driver.getCurrentUrl());        
         // driverHelper.verifyUrl("https://www.linkedin.com/company/cleveland-clinic");
@@ -45,8 +45,8 @@ public class ForProviders {
     }
 
     public void careers(){
-        driverHelper.ClickTheElement(HomePageLocators.forProviders_careers);
-        driverHelper.ClickTheElement(HomePageLocators.forProviders_findYourCareer);
+        driverHelper.clickTheElement(HomePageLocators.forProviders_careers);
+        driverHelper.clickTheElement(HomePageLocators.forProviders_findYourCareer);
         driverHelper.switchWindow();
         //driverHelper.waitForVisibility(HomePageLocators.forProviders_nursingAtClevelandNew, 1);
        // driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "12", "value"));
@@ -57,8 +57,8 @@ public class ForProviders {
 
 
     public void referPatient(){
-        driverHelper.ClickTheElement(HomePageLocators.forProviders_referPatient);
-        driverHelper.ClickTheElement(HomePageLocators.forProviders_referringPhysician);
+        driverHelper.clickTheElement(HomePageLocators.forProviders_referPatient);
+        driverHelper.clickTheElement(HomePageLocators.forProviders_referringPhysician);
         driverHelper.switchWindow();
         //driverHelper.waitForVisibility(HomePageLocators.forProviders_nursingAtClevelandNew, 1);
         //driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "13", "value"));
@@ -67,8 +67,8 @@ public class ForProviders {
     }
 
     public void consultQd(){
-        driverHelper.ClickTheElement(HomePageLocators.forProviders_consultQd);
-        driverHelper.ClickTheElement(HomePageLocators.forProviders_siteForPhysician);
+        driverHelper.clickTheElement(HomePageLocators.forProviders_consultQd);
+        driverHelper.clickTheElement(HomePageLocators.forProviders_siteForPhysician);
         driverHelper.switchWindow();
        // driverHelper.waitForVisibility(HomePageLocators.forProviders_nursingAtClevelandNew, 1);
         //driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "14", "value"));
@@ -78,7 +78,7 @@ public class ForProviders {
 
     public void education(){
         driverHelper.hover(HomePageLocators.forProviders_education);
-        driverHelper.ClickTheElement(HomePageLocators.forProviders_trainingAndEducation);
+        driverHelper.clickTheElement(HomePageLocators.forProviders_trainingAndEducation);
         driverHelper.switchWindow();
         //driverHelper.waitForVisibility(HomePageLocators.forProviders_nursingAtClevelandNew, 1);
         //driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "15", "value"));
