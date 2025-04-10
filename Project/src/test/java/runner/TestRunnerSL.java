@@ -44,7 +44,6 @@ public class TestRunnerSL extends Base {
     public void ActionsVerification() {
         test = reports.createTest("Verify Footer Actions");
        HomePageActions homePageActions = new HomePageActions();
-       
         homePageActions.verifyActionsFooter(test);
     }
 
