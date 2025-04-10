@@ -1,14 +1,14 @@
 package runner;
 
+
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
+import pages.RespiratoryAction;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-
 import pages.AppointmentsActions;
 import pages.FindADoctorActions;
 import pages.HomePageActions;
@@ -50,6 +50,14 @@ public class TestRunner extends Base {
         homePageActions.clickOnFindADoctor(test);
         findADoctorActions.findADoctorAction(test);
     }
+  
+      @Test
+    public void create() throws Exception{
+        HomePageActions home = new HomePageActions();
+        RespiratoryAction resp = new RespiratoryAction();
+        home.searchAll();
+        resp.respiratoryAll();
+    }
 
     @AfterMethod
     public void closeBrowser() {
@@ -60,4 +68,5 @@ public class TestRunner extends Base {
     {
         reports.flush();
     }
+
 }
