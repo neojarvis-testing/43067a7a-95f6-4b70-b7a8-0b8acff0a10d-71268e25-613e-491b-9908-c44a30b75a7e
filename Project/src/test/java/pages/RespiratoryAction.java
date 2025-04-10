@@ -16,27 +16,14 @@ public void respOperation() throws InterruptedException
    help.hoverAndClick(RespiratoryLocators.cough);
    String cough = Base.driver.getTitle();
     help.verifyTitle(cough);
-//     Thread.sleep(2000);
-//    help.hoverAndClick(RespiratoryLocators.pep);
-//    String pep = Base.driver.getTitle();
-//     help.verifyTitle(pep);
-//     Thread.sleep(2000);
-//    help.hoverAndClick(RespiratoryLocators.Acapella);
-//    String acapella = Base.driver.getTitle();
-//     help.verifyTitle(acapella);
-//     Thread.sleep(2000);
-//    help.hoverAndClick(RespiratoryLocators.nebulizer);
-//    String nebulizer = Base.driver.getTitle();
-//     help.verifyTitle(nebulizer);
-//     Thread.sleep(2000);
+
 
 }
 public void doctorFilters() throws InterruptedException
 {   Base.driver.navigate().back();
     Base.driver.navigate().back();
     Base.driver.navigate().back();
-    // Base.driver.navigate().back();
-    // Base.driver.navigate().back();
+   
     help.hoverAndClick(RespiratoryLocators.byDoctors);
     help.hoverAndClick(RespiratoryLocators.specialist);
   
