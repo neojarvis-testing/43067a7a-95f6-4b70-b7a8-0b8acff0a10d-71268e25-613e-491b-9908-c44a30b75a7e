@@ -1,19 +1,35 @@
 package pages;
-
 import com.aventstack.extentreports.ExtentTest;
-
+import com.aventstack.extentreports.Status;
 
 import uistore.HomePageLocators;
-
 import utils.Base;
-
+import utils.ReportHelper;
+import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class HomePageActions {
-WebDriverHelper help = new WebDriverHelper(Base.driver);
-
- ExtentTest test;
-public void searchOperation() throws Exception
+    WebDriverHelper driverHelper = new WebDriverHelper(Base.driver);
+  
+  public  void clickOnSchedule(ExtentTest test)
+    {
+        driverHelper.clickTheElement(HomePageLocators.Appointments_ScheduleNow);
+        test.log(Status.INFO, "Clicked on schedule now");
+    }
+    public  void clickOnFindADoctor(ExtentTest test)
+    {
+        driverHelper.clickTheElement(HomePageLocators.Appointments_Find_a_Doctor);
+        test.log(Status.INFO, "Clicked on Request an Appointment");
+    }
+  
+   public void healthLibrary(){
+        helper.clickTheElement(HomePageLocators.healthLibrary);
+    }
+    public void institute(){
+        helper.clickTheElement(HomePageLocators.institueAndDepat);
+    }
+  
+  public void searchOperation() throws Exception
 {
     help.clickTheElement(HomePageLocators.search);
     help.clickTheElement(HomePageLocators.searchbar);
@@ -27,35 +43,11 @@ public void searchOperation() throws Exception
      help.clickTheElement(HomePageLocators.firstResp);
      help.retrieveText(HomePageLocators.verifyResp);
 }
+  
 public void searchAll() throws Exception
 {
     searchOperation();
 }
-=======
-
-import uistore.HomePageLocators;
-import utils.Base;
-import utils.WebDriverHelper;
-
-public class HomePageActions {
-    WebDriverHelper helper=new WebDriverHelper(Base.driver);
-    public void healthLibrary(){
-        helper.clickTheElement(HomePageLocators.healthLibrary);
-    }
-    public void institute(){
-        helper.clickTheElement(HomePageLocators.institueAndDepat);
-
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-
-import uistore.HomePageLocators;
-import utils.Base;
-import utils.ReportHelper;
-import utils.Screenshot;
-import utils.WebDriverHelper;
-
-public class HomePageActions {
-    WebDriverHelper driverHelper = new WebDriverHelper(Base.driver);
 
     public void clickFaceBook(){
         String mainWindowHandle = Base.driver.getWindowHandle();
@@ -114,10 +106,6 @@ public class HomePageActions {
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
-
-
-
-
 
     public void clickAppointmentsAccess(){
         driverHelper.scrollToElement(HomePageLocators.appointmentsActions);
