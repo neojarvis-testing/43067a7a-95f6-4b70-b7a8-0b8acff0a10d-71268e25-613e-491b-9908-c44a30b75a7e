@@ -3,6 +3,7 @@ package uistore;
 import org.openqa.selenium.By;
 
 public class HomePageLocators {
+
     public static By clevelandClinicHeader = By.cssSelector("img[alt='Cleveland Clinic logo']");
 
     public static By facebookSocialLink = By.cssSelector("[href='https://www.facebook.com/ClevelandClinic']");
@@ -26,4 +27,8 @@ public class HomePageLocators {
     public static By virtualOpinionsActions = By.xpath("//a[text()='Virtual Second Opinions']");
     public static By virtualVisitsActions = By.xpath("//a[text()='Virtual Visits']");
     
+
+    public static By getDirection=By.cssSelector("div a.story-panel__button[href='/locations']");
+
+
 }
