@@ -7,12 +7,12 @@ import utils.Base;
 import utils.WebDriverHelper;
 
 public class HealthLibraryActions {
-    WebDriverHelper helper=new WebDriverHelper(Base.driver);
+    WebDriverHelper driverHelper=new WebDriverHelper(Base.driver);
     public void clickOnEyes(){
-        helper.scrollToElementandCLick(HealthLibraryLocators.bodySysAndOrgans);
-        helper.waitForVisibility(HealthLibraryLocators.searchBar,10);
-        helper.typeText(HealthLibraryLocators.searchBar,"Eyes");
-        helper.pressEnter(HealthLibraryLocators.searchBar);
-        helper.clickTheElement(HealthLibraryLocators.eyes);
+        driverHelper.scrollToElementandCLick(HealthLibraryLocators.bodySysAndOrgans);
+        driverHelper.waitForVisibility(HealthLibraryLocators.searchBar,10);
+        driverHelper.typeText(HealthLibraryLocators.searchBar,"Eyes");
+        driverHelper.pressEnter(HealthLibraryLocators.searchBar);
+        driverHelper.clickTheElement(HealthLibraryLocators.eyes);
     }
 }

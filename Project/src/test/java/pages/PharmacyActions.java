@@ -5,15 +5,14 @@ import utils.Base;
 import utils.WebDriverHelper;
 
 public class PharmacyActions {
-    WebDriverHelper helper=new WebDriverHelper(Base.driver);
+    WebDriverHelper driverHelper=new WebDriverHelper(Base.driver);
     public void takeSurvey(){
-        helper.waitsec(3);
-        helper.scrollpixel(700);
-        helper.scrollToElement(PharmacyLocators.takeSurveySpecila);
-        //helper.hover(PharmacyLocators.takeSurveySpecila);
-        helper.waitsec(3);
-        helper.clickTheElement(PharmacyLocators.takeSurvey);
-        helper.switchWindow();
+       
+        driverHelper.scrollToElement(PharmacyLocators.takeSurveySpecila);
+        //driverHelper.hover(PharmacyLocators.takeSurveySpecila);
+      
+        driverHelper.clickTheElement(PharmacyLocators.takeSurvey);
+        driverHelper.switchWindow();
         Base.driver.navigate().back();
 
     }

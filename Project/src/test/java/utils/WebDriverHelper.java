@@ -114,7 +114,7 @@ public class WebDriverHelper {
     public void scrollToElement(By locator) {
         WebElement element = driver.findElement(locator);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();", element);
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
         LoggerHandler.createLogInfo("Scrolled Till the element is in View ");
     }
  
@@ -270,7 +270,7 @@ public class WebDriverHelper {
     public void scrollToElementandCLick(By locator) {
         WebElement element = driver.findElement(locator);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();", element);
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
         element.click();
         LoggerHandler.createLogInfo("Scrolled Till The Element And Clicked The Element");
     }

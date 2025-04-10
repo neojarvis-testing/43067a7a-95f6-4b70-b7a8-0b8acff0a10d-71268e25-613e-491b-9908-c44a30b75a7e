@@ -5,15 +5,15 @@ import utils.Base;
 import utils.WebDriverHelper;
 
 public class BSOActions {
-    WebDriverHelper helper=new WebDriverHelper(Base.driver);
+    WebDriverHelper driverHelper=new WebDriverHelper(Base.driver);
 
     public void eyeDiseases(){
         
-       helper.waitForClickability(BSOLocatorss.redEye,10);
-       helper.hover(BSOLocatorss.eyeAppearance);
-       helper.waitsec(3);
-       helper.clickTheElement(BSOLocatorss.redEye);
-       helper.switchWindow();
+       driverHelper.waitForClickability(BSOLocatorss.redEye,10);
+       driverHelper.hover(BSOLocatorss.eyeAppearance);
+     
+       driverHelper.clickTheElement(BSOLocatorss.redEye);
+       driverHelper.switchWindow();
    }
 
 
