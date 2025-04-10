@@ -1,52 +1,86 @@
 package utils;
+/**
+* This utility class provides methods to read specific cell values
+* from an Excel sheet using Apache POI library.
+*/
  
-import java.io.FileInputStream;
-import java.io.IOException;
- 
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  
-/*
-    * a. Method Name: readdata()
-    * b. Author Name: MD Saif Masoom
-    * c. Description: This method is used to read data from an Excel sheet
-    * d. Parameters: int rownumber, int colnumber
-    * e. Return type: String
-*/
+import java.io.FileInputStream;
+import java.io.IOException;
  
 public class ExcelReader {
+    public static FileInputStream file = null;
+    public static XSSFWorkbook workbook = null;
+    public static String cellValue = null;
  
-    public static FileInputStream file;
-    public static XSSFWorkbook workbook;
-    public static XSSFSheet sheet;
-    public static XSSFRow row;
-    public static XSSFCell cell;
+    /**
+     * Reads a cell value from the specified Excel sheet.
+     *
+     * @param sheetName  The name of the sheet to read from.
+     * @param key        The value of the key column to search for.
+     * @param columnName The name of the column whose value needs to be fetched.
+     * @return The value of the cell corresponding to the specified key and column.
+     */
+    public static String readCellValue(String sheetName, String key, String columnName) {
+        String filePath = System.getProperty("user.dir") + "/excel/data.xlsx";
  
-    public static String readdata(int rownumber, int colnumber) throws IOException {
-        String filepath = System.getProperty("user.dir") + Base.prop.getProperty("excelpath");
-        String sheetname= Base.prop.getProperty("sheet");
- 
-        String cellValue;
         try {
-            file = new FileInputStream(filepath);
+            file = new FileInputStream(filePath);
             workbook = new XSSFWorkbook(file);
-            sheet = workbook.getSheet(sheetname);
-            row = sheet.getRow(rownumber);
-            cell = row.getCell(colnumber);
-            cellValue = cell.toString();
-            return cellValue;
-        } catch (Exception e) {
-            cellValue = "";
-        } finally {
-            if (workbook != null) {
-                workbook.close();
+            XSSFSheet sheet = workbook.getSheet(sheetName);
+            XSSFRow headerRow = sheet.getRow(0);
+            int keyColumnIndex = -1;
+            int targetColumnIndex = -1;
+ 
+            for (Cell cell : headerRow) {
+                String cellValueHeader = cell.getStringCellValue().trim();
+                if (cellValueHeader.equalsIgnoreCase("id")) {
+                    keyColumnIndex = cell.getColumnIndex();
+                }
+                if (cellValueHeader.equalsIgnoreCase(columnName)) {
+                    targetColumnIndex = cell.getColumnIndex();
+                }
+                if (keyColumnIndex != -1 && targetColumnIndex != -1) {
+                    break;
+                }
             }
-            if (file != null) {
-                file.close();
+ 
+            for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+                XSSFRow row = sheet.getRow(i);
+                if (row != null) {
+                    Cell keyCell = row.getCell(keyColumnIndex);
+                    if (keyCell != null && keyCell.getStringCellValue().trim().equalsIgnoreCase(key)) {
+                        Cell targetCell = row.getCell(targetColumnIndex);
+                        if (targetCell != null) {
+                            cellValue = targetCell.toString();
+                            break;
+                        }
+                    }
+                }
+            }
+ 
+        } catch (IOException e) {
+            System.out.println("Error reading the file: " + e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error with data: " + e.getMessage());
+        } finally {
+            try {
+                if (workbook != null) {
+                    workbook.close();
+                }
+                if (file != null) {
+                    file.close();
+                }
+            } catch (IOException e) {
+                System.out.println("Error closing resources: " + e.getMessage());
             }
         }
+ 
         return cellValue;
     }
 }

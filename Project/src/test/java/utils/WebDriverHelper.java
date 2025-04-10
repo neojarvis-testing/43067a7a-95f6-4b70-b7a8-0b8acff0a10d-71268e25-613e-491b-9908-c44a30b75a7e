@@ -274,27 +274,4 @@ public class WebDriverHelper {
         element.click();
         LoggerHandler.createLogInfo("Scrolled Till The Element And Clicked The Element");
     }
-
-
-    public void scrollToCoordinate(int x, int y) {
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(" + x + "," + y + ")", "");
-
-    }
-    public void scrollpixel(int y) {
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0," + y + ")", "");
-
-    }
-
-    public void waitsec(int sec) {
-        try {
-            Thread.sleep(sec*1000);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
 }
