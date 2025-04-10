@@ -4,6 +4,11 @@ import org.openqa.selenium.By;
 
 public class HomePageLocators {
 
+    public static By healthLibrary=By.xpath("(//a[@href='/health'])[2]");
+    public static By institueAndDepat=By.xpath("(//a[@href='/departments'])[2]");
+    public static By needHelp=By.xpath("(//a[@class='nav--utility__link '])[2]");
+
+
     public static By clevelandClinicHeader = By.cssSelector("img[alt='Cleveland Clinic logo']");
 
     public static By facebookSocialLink = By.cssSelector("[href='https://www.facebook.com/ClevelandClinic']");
@@ -29,6 +34,7 @@ public class HomePageLocators {
     
 
     public static By getDirection=By.cssSelector("div a.story-panel__button[href='/locations']");
+
 
 
 }
