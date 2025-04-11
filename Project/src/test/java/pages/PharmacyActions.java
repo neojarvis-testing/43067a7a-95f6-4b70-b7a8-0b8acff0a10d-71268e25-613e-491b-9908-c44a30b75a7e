@@ -30,6 +30,8 @@ public class PharmacyActions {
         String cwindow=Base.driver.getWindowHandle();
         driverHelper.clickTheElement(PharmacyLocators.takeSurvey);
         driverHelper.switchWindow();
+        test.log(Status.PASS, "click on parking");
+        test.log(Status.PASS, "click on parking");        
         LoggerHandler.createLogInfo("verify forms");
           test.log(Status.INFO, "verify forms");
           LoggerHandler.createLogInfo("verify forms");

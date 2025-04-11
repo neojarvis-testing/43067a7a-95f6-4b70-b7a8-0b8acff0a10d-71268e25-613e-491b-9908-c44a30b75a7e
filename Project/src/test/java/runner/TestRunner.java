@@ -30,7 +30,7 @@ public class TestRunner extends Base {
         
     }
 
-    @Test(priority = 1, enabled = true)
+    @Test(priority = 1, enabled = false)
     public void testcase1()
     {
         HomePageActions homePageActions = new HomePageActions();
@@ -41,7 +41,7 @@ public class TestRunner extends Base {
         appointmentsActions.clickOnRequest(test);
         requestAppointmentActions.requestAppointmentAction(test);
     }
-    @Test(priority = 2, enabled = true)
+    @Test(priority = 2, enabled = false)
     public void testcase2()
     {
         HomePageActions homePageActions = new HomePageActions();

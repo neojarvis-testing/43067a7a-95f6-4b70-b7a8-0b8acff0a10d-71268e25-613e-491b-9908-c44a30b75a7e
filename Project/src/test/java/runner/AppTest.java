@@ -11,7 +11,7 @@ import com.aventstack.extentreports.ExtentTest;
 
 import pages.BSOActions;
 import pages.BloodManageActions;
-import pages.EyeActions;
+
 import pages.HealthLibraryActions;
 import pages.HomePageActions;
 import pages.InstituteActions;
@@ -24,7 +24,7 @@ public class AppTest extends Base{
     ExtentReports reports;
     @BeforeClass
     public void report(){
-        reports=ReportHelper.createExtentReporter("cleveland_Report");
+        reports=ReportHelper.createExtentReporter("cleveland_Report_vig");
     }
     @BeforeMethod
     public void setBrowser(){
@@ -32,19 +32,19 @@ public class AppTest extends Base{
     }
     @Test(enabled = true)
     public void FirstTestCase()throws InterruptedException{
-        test=reports.createTest("cleveland_Report");
+       
         HomePageActions homePageActions =new HomePageActions();
         homePageActions.healthLibrary();
         HealthLibraryActions healthLibraryActions=new HealthLibraryActions();
         healthLibraryActions.clickOnEyes();
         BSOActions bso =new BSOActions();
         bso.eyeDiseases();
-        EyeActions eye=new EyeActions();
-       // eye.eyeDiseases();
+        
     }
     @Test(enabled = true)
     public void testCaseTwo() throws InterruptedException{
-        test=reports.createTest("cleveland_Report");
+        
+        test=reports.createTest("test");        
         HomePageActions homePageActions =new HomePageActions();
         homePageActions.institute();
         InstituteActions institute=new InstituteActions();
@@ -55,7 +55,7 @@ public class AppTest extends Base{
         PharmacyActions pharmacy=new PharmacyActions();
         pharmacy.takeSurvey(test);
         institute.contactAction(test);
-
+        
 
     }
    
@@ -65,6 +65,6 @@ public class AppTest extends Base{
     }
     @AfterClass
     public void FlushReports(){
-        reports.flush();
+        ReportHelper.extentReportFlush();
     }    
 }

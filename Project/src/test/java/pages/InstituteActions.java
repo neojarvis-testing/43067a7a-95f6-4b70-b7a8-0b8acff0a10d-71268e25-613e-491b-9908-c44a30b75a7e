@@ -53,7 +53,7 @@ public class InstituteActions {
           driverHelper.hover(NeedHelpLocators.parking);
           driverHelper.scrollToElementandCLick(NeedHelpLocators.parking);
           LoggerHandler.createLogInfo("click on parking");
-          test.log(Status.PASS, "click on parking");
+          test.log(Status.INFO, "click on parking");
           driverHelper.clickTheElement(NeedHelpLocators.needassitance);
           driverHelper.clickTheElement(NeedHelpLocators.globalPatient);
           driverHelper.scrollToElementandCLick(NeedHelpLocators.speakwithteam);
