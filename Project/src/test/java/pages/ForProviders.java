@@ -1,19 +1,19 @@
 package pages;
-
+ 
 import java.time.Duration;
-
+ 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
+ 
 import uistore.HomePageLocators;
 import utils.Base;
 import utils.ExcelReader;
 import utils.WebDriverHelper;
-
+ 
 public class ForProviders {
-
+ 
     WebDriverHelper driverHelper = new WebDriverHelper(Base.driver);
-
+ 
     /**
      * Author: Rewa Pawar
      * Navigates to the 'Join Our Nursing Team' section, performs necessary actions,
@@ -34,18 +34,18 @@ public class ForProviders {
             driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "5", "value"));
             Base.driver.close();
             Base.driver.switchTo().window(mainWindowHandle);
-            
+           
         } catch (Exception e) {
             // Handle exception
         }
     }
-
+ 
     /**
      * Navigates to the 'Careers' section, performs necessary actions,
      * switches to a new window, and then closes the window.
-     * 
+     *
      */
-    
+   
     public void careers(ExtentTest test) {
         try {
             String mainWindowHandle = Base.driver.getWindowHandle();
@@ -60,16 +60,16 @@ public class ForProviders {
             driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "6", "value"));
             Base.driver.close();
             Base.driver.switchTo().window(mainWindowHandle);
-            
+           
         } catch (Exception e) {
             // Handle exception
         }
     }
-
+ 
     /**
      * Navigates to the 'Refer a Patient' section, performs necessary actions,
      * switches to a new window, and then closes the window.
-     * 
+     *
      */
      
     public void referPatient(ExtentTest test) {
@@ -84,17 +84,17 @@ public class ForProviders {
             driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "7", "value"));
             Base.driver.close();
             Base.driver.switchTo().window(mainWindowHandle);
-            
-            
+           
+           
         } catch (Exception e) {
-            
+           
         }
     }
-
+ 
     /**
      * Navigates to the 'Consult QD' section, performs necessary actions,
      * switches to a new window, and then closes the window.
-     * 
+     *
      */
      
     public void consultQd(ExtentTest test) {
@@ -109,18 +109,18 @@ public class ForProviders {
             driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "8", "value"));
             Base.driver.close();
             Base.driver.switchTo().window(mainWindowHandle);
-            
-            
+           
+           
         } catch (Exception e) {
            
         }
     }
-
+ 
     /**
      * Navigates to the 'Education' section, performs necessary actions,
      * switches to a new window, and then closes the window.
-     * 
-     */ 
+     *
+     */
      
     public void education(ExtentTest test) {
         try {
@@ -136,15 +136,15 @@ public class ForProviders {
             Base.driver.close();
             Base.driver.switchTo().window(mainWindowHandle);
            
-            
+           
         } catch (Exception e) {
-
+ 
         }
     }
-
+ 
     /**
      * Executes all the methods to navigate through various sections for providers.
-     * 
+     *
      */
     public void allProvidersMethod(ExtentTest test) {
         joinNursingTeam(test);
@@ -154,3 +154,4 @@ public class ForProviders {
         education(test);
     }
 }
+ 
