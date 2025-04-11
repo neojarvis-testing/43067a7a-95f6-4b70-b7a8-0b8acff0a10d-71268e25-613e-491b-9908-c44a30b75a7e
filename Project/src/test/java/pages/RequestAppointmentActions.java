@@ -38,40 +38,40 @@ public class RequestAppointmentActions
     }
     public void fillTheDetails(ExtentTest test)
     {
-        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Firstname, ExcelReader.readCellValue("Sheet4", "1", "value"));
+        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Firstname, ExcelReader.readCellValue("Sheet1", "1", "value"));
         test.log(Status.INFO, "Entered FirstName in the Input Field");
-        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Lastname, ExcelReader.readCellValue("Sheet4", "2", "value"));
+        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Lastname, ExcelReader.readCellValue("Sheet1", "2", "value"));
         test.log(Status.INFO, "Entered LastName in the Input Field");
-        driverHelper.selectByValue(RequestAppointmentLocators.RequestAppointment_Gender, ExcelReader.readCellValue("Sheet4", "3", "value"));
+        driverHelper.selectByValue(RequestAppointmentLocators.RequestAppointment_Gender, ExcelReader.readCellValue("Sheet1", "3", "value"));
         test.log(Status.INFO, "Selected Male in DropDown");
-        driverHelper.selectByValue(RequestAppointmentLocators.RequestAppointment_MaritalStatus, ExcelReader.readCellValue("Sheet4", "4", "value"));
+        driverHelper.selectByValue(RequestAppointmentLocators.RequestAppointment_MaritalStatus, ExcelReader.readCellValue("Sheet1", "4", "value"));
         test.log(Status.INFO, "Selected Single in DropDown");
-        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_DOB, ExcelReader.readCellValue("Sheet4", "5", "value"));
+        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_DOB, ExcelReader.readCellValue("Sheet1", "5", "value"));
         test.log(Status.INFO, "Entered DOB in the Input Field");
         driverHelper.hoverAndClick(RequestAppointmentLocators.RequestAppointment_NextButton);
         test.log(Status.INFO, "Clicked on Next Button");
     }
     public void fillcontacts(ExtentTest test)
     {
-        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Address, ExcelReader.readCellValue("Sheet4", "6", "value"));
+        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Address, ExcelReader.readCellValue("Sheet1", "6", "value"));
         test.log(Status.INFO, "Entered Address in the Input Field");
-        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_City, ExcelReader.readCellValue("Sheet4", "7", "value"));
+        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_City, ExcelReader.readCellValue("Sheet1", "7", "value"));
         test.log(Status.INFO, "Entered City in the Input Field");
         driverHelper.waitForClickability(RequestAppointmentLocators.RequestAppointment_StateCategory, 10);
-        driverHelper.selectByVisibleText(RequestAppointmentLocators.RequestAppointment_StateCategory, ExcelReader.readCellValue("Sheet4", "8", "value"));
+        driverHelper.selectByVisibleText(RequestAppointmentLocators.RequestAppointment_StateCategory, ExcelReader.readCellValue("Sheet1", "8", "value"));
         test.log(Status.INFO, "Selected State in DropDown");
-        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Email, ExcelReader.readCellValue("Sheet4", "9", "value"));
+        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Email, ExcelReader.readCellValue("Sheet1", "9", "value"));
         test.log(Status.INFO, "Entered Email in the Input Field");
-        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Zipcode, ExcelReader.readCellValue("Sheet4", "10", "value"));
+        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Zipcode, ExcelReader.readCellValue("Sheet1", "10", "value"));
         test.log(Status.INFO, "Entered Zipcode in the Input Field");
-        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Phone_number, ExcelReader.readCellValue("Sheet4", "11", "value"));
+        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Phone_number, ExcelReader.readCellValue("Sheet1", "11", "value"));
         test.log(Status.INFO, "Entered Phone Number in the Input Field");
         driverHelper.hoverAndClick(RequestAppointmentLocators.RequestAppointment_NextButton);
         test.log(Status.INFO, "Clicked on Next Button");
     }
     public void appointmentneed(ExtentTest test)
     {
-        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Reason, ExcelReader.readCellValue("Sheet4", "12", "value"));
+        driverHelper.typeText(RequestAppointmentLocators.RequestAppointment_Reason, ExcelReader.readCellValue("Sheet1", "12", "value"));
         test.log(Status.INFO, "Entered Reason For Appoinment in the Input Field");
         driverHelper.hoverAndClick(RequestAppointmentLocators.RequestAppointment_NextButton);
         test.log(Status.INFO, "Clicked on Next Button");

@@ -21,6 +21,7 @@ import pages.HomePageActions;
 import pages.InstituteActions;
 import pages.PharmacyActions;
 import pages.RequestAppointmentActions;
+import pages.RespiratoryAction;
 import utils.Base;
 import utils.ReportHelper;
 
@@ -38,14 +39,14 @@ public class TestRunnerAP extends Base {
         
     }
     //saif
-    @Test(priority = 1, enabled = true)
+    @Test(priority = 5, enabled = true)
     public void initializationtask() {
     test = reports.createTest("Sheet1");
     HomePageAction action = new HomePageAction();
     action.wrappingMethod();
     }
     //harshit
-    @Test(priority = 2, enabled = true)
+    @Test(priority = 4, enabled = true)
     public void socialsVerification() {
         test = reports.createTest("TestCase 07");
         HomePageActions homePageActions = new HomePageActions();
@@ -61,7 +62,7 @@ public class TestRunnerAP extends Base {
         homePageActions.verifyActionsFooter(test);
     }
     //kiruthik
-    @Test(priority = 4, enabled = true)
+    @Test(priority = 1, enabled = true)
     public void testcase1()
     {
         HomePageActions homePageActions = new HomePageActions();
@@ -73,7 +74,7 @@ public class TestRunnerAP extends Base {
         requestAppointmentActions.requestAppointmentAction(test);
     }
     //kiruthik
-    @Test(priority = 5, enabled = true)
+    @Test(priority = 2, enabled = true)
     public void testcase2()
     {
         HomePageActions homePageActions = new HomePageActions();

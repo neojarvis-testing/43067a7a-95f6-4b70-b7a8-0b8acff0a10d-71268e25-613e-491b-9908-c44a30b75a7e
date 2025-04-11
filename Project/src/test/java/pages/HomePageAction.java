@@ -28,7 +28,7 @@ public class HomePageAction {
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
             driverHelper.clickTheElement(LocationPageLocators.searchbar);
            // LoggerHandler.createLogTextInfo(LocationPageLocators.searchbar,"Clicked");
-            String data = ExcelReader.readCellValue("Sheet1", "1", "value");
+            String data = ExcelReader.readCellValue("Sheet4", "1", "value");
             driverHelper.typeText(LocationPageLocators.searchbar, data);
             //LoggerHandler.createLogTextInfo(LocationPageLocators.searchbar, "Sent Text");
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
