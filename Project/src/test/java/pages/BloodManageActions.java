@@ -12,6 +12,6 @@ public class BloodManageActions {
         driverHelper.clickTheElement(BloodManageLocators.contact);
         Screenshot.screenShotAndHighlight(Base.driver, BloodManageLocators.contact, "name");
         Base.driver.navigate().back();
-
+        
     }
 }

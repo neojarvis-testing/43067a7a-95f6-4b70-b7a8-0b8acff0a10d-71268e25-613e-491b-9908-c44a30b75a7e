@@ -54,7 +54,8 @@ public void searchAll() throws Exception
         Screenshot.screenShotAndHighlight(Base.driver, HomePageLocators.clevelandClinicHeader, "facebook");
         driverHelper.clickTheElement(HomePageLocators.facebookSocialLink);
         driverHelper.switchWindow();   
-        // driverHelper.verifyUrl("https://www.facebook.com/ClevelandClinic");  
+        
+         
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);        
     }
@@ -62,7 +63,7 @@ public void searchAll() throws Exception
         String mainWindowHandle = Base.driver.getWindowHandle();
         driverHelper.clickTheElement(HomePageLocators.twitterSocialLink);
         driverHelper.switchWindow();       
-        // driverHelper.verifyUrl("https://twitter.com/clevelandclinic"); 
+       
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
@@ -70,7 +71,7 @@ public void searchAll() throws Exception
         String mainWindowHandle = Base.driver.getWindowHandle();
         driverHelper.clickTheElement(HomePageLocators.youtubeSocialLink);
         driverHelper.switchWindow();       
-        // driverHelper.verifyUrl("https://www.youtube.com/user/clevelandclinic"); 
+        
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
@@ -78,7 +79,7 @@ public void searchAll() throws Exception
         String mainWindowHandle = Base.driver.getWindowHandle();
         driverHelper.clickTheElement(HomePageLocators.instagramSocialLink);
         driverHelper.switchWindow();      
-        // driverHelper.verifyUrl("https://www.instagram.com/clevelandclinic/");  
+        
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
@@ -86,7 +87,7 @@ public void searchAll() throws Exception
         String mainWindowHandle = Base.driver.getWindowHandle();
         driverHelper.clickTheElement(HomePageLocators.linkedinSocialLink);
         driverHelper.switchWindow();        
-        // driverHelper.verifyUrl("https://www.linkedin.com/company/cleveland-clinic");
+       
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
@@ -94,7 +95,7 @@ public void searchAll() throws Exception
         String mainWindowHandle = Base.driver.getWindowHandle();
         driverHelper.clickTheElement(HomePageLocators.pinterestSocialLink);
         driverHelper.switchWindow();      
-        // driverHelper.verifyUrl("https://www.pinterest.com/clevelandclinic/");  
+        
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
@@ -102,7 +103,7 @@ public void searchAll() throws Exception
         String mainWindowHandle = Base.driver.getWindowHandle();
         driverHelper.clickTheElement(HomePageLocators.snapchatSocialLink);
         driverHelper.switchWindow();     
-        // driverHelper.verifyUrl("https://www.snapchat.com/add/clevelandclinic");   
+          
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
@@ -110,13 +111,13 @@ public void searchAll() throws Exception
     public void clickAppointmentsAccess(){
         driverHelper.scrollToElement(HomePageLocators.appointmentsActions);
         driverHelper.clickTheElement(HomePageLocators.appointmentsActions);
-        // driverHelper.verifyUrl("https://my.clevelandclinic.org/patients/information/access");
+       
         Base.driver.navigate().back();
     }
     public void clickAcceptedInsurance(){
         driverHelper.scrollToElement(HomePageLocators.acceptedInsuranceActions);
         driverHelper.clickTheElement(HomePageLocators.acceptedInsuranceActions);
-        // driverHelper.verifyUrl("https://my.clevelandclinic.org/patients/accepted-insurance");
+        
         Base.driver.navigate().back();
     }
     public void clickEventsCalender(){
@@ -124,56 +125,56 @@ public void searchAll() throws Exception
         driverHelper.scrollToElement(HomePageLocators.eventsCalenderActions);
         driverHelper.clickTheElement(HomePageLocators.eventsCalenderActions);
         driverHelper.switchWindow();     
-        // driverHelper.verifyUrl("https://events.clevelandclinic.org/");
+        
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
     public void clickFinancialAssistance(){
         driverHelper.scrollToElement(HomePageLocators.financialAssistanceActions);
         driverHelper.clickTheElement(HomePageLocators.financialAssistanceActions);
-        // driverHelper.verifyUrl("https://my.clevelandclinic.org/patients/billing-finance/financial-assistance");
+       
         Base.driver.navigate().back();
     }
     public void clickGiveCleveland(){
         driverHelper.scrollToElement(HomePageLocators.giveClevelandActions);
         driverHelper.clickTheElement(HomePageLocators.giveClevelandActions);
-        // driverHelper.verifyUrl("https://my.clevelandclinic.org/giving");
+
         Base.driver.navigate().back();
     }
     public void clickPayBill(){
         driverHelper.scrollToElement(HomePageLocators.payBillActions);
         driverHelper.clickTheElement(HomePageLocators.payBillActions);
-        // driverHelper.verifyUrl("https://my.clevelandclinic.org/patients/billing-finance/payment-options");
+        
         Base.driver.navigate().back();
     }
     public void clickPriceTransparency(){
         driverHelper.scrollToElement(HomePageLocators.priceTransparencyActions);
         driverHelper.clickTheElement(HomePageLocators.priceTransparencyActions);
-        // driverHelper.verifyUrl("https://my.clevelandclinic.org/patients/billing-finance/comprehensive-hospital-charges]");
+
         Base.driver.navigate().back();
     }
     public void clickReferPatient(){
         driverHelper.scrollToElement(HomePageLocators.referPatientActions);
         driverHelper.clickTheElement(HomePageLocators.referPatientActions);
-        // driverHelper.verifyUrl("https://my.clevelandclinic.org/professionals/referring");
+       
         Base.driver.navigate().back();
     }
     public void clickPhoneDirectory(){
         driverHelper.scrollToElement(HomePageLocators.phoneDirectoryActions);
         driverHelper.clickTheElement(HomePageLocators.phoneDirectoryActions);
-        // driverHelper.verifyUrl("https://my.clevelandclinic.org/about/contact/phone-directory");
+        
         Base.driver.navigate().back();
     }
     public void clickVirtualOpinions(){
         driverHelper.scrollToElement(HomePageLocators.virtualOpinionsActions);
         driverHelper.clickTheElement(HomePageLocators.virtualOpinionsActions);
-        // driverHelper.verifyUrl("https://my.clevelandclinic.org/online-services/virtual-second-opinions");
+        
         Base.driver.navigate().back();
     }
     public void clickVirtualVisits(){
         driverHelper.scrollToElement(HomePageLocators.virtualVisitsActions);
         driverHelper.clickTheElement(HomePageLocators.virtualVisitsActions);
-        // driverHelper.verifyUrl("https://my.clevelandclinic.org/online-services/virtual-visits");
+        
         Base.driver.navigate().back();
         driverHelper.clickTheElement(HomePageLocators.clevelandClinicHeader);
     }
