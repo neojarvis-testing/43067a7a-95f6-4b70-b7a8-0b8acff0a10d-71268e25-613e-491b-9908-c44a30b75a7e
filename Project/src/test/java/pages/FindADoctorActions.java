@@ -26,7 +26,6 @@ public class FindADoctorActions
         driverHelper.typeText(FindADoctorLocators.FindADoctorLocators_searchBar,"Heart");
     }
  
-   
     /**
      * Author: Kiruthik Vijey Raj P
      * This method interacts with various filter sections on the "Find a Doctor" page.
@@ -39,13 +38,14 @@ public class FindADoctorActions
         driverHelper.waitForClickability(FindADoctorLocators.FindADoctorLocators_location, 10);
         driverHelper.clickTheElement(FindADoctorLocators.FindADoctorLocators_location);
         driverHelper.clickTheElement(FindADoctorLocators.FindADoctorLocators_locationOption);
-        driverHelper.waitForVisibility(FindADoctorLocators.FindADoctorLocators_Department,10);
+        Screenshot.captureScreenshot(Base.driver,"location");
+        driverHelper.waitForClickability(FindADoctorLocators.FindADoctorLocators_Department,10);
         driverHelper.clickTheElement(FindADoctorLocators.FindADoctorLocators_Department);
         driverHelper.waitForClickability(FindADoctorLocators.FindADoctorLocators_DepartmentOption, 10);
         driverHelper.clickTheElement(FindADoctorLocators.FindADoctorLocators_DepartmentOption);
         driverHelper.waitForClickability(FindADoctorLocators.FindADoctorLocators_Language,10);
         driverHelper.clickTheElement(FindADoctorLocators.FindADoctorLocators_Language);
-        driverHelper.typeText(FindADoctorLocators.FindADoctorLocators_Language, ExcelReader.readCellValue("Sheet4", "13", "value"));
+        driverHelper.typeText(FindADoctorLocators.FindADoctorLocators_Language, ExcelReader.readCellValue("Sheet1", "13", "value"));
         driverHelper.pressEnter(FindADoctorLocators.FindADoctorLocators_Language);
     }
    

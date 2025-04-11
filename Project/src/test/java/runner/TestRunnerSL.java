@@ -30,7 +30,7 @@ public class TestRunnerSL extends Base {
     @BeforeMethod
     public void baseMethod() {
         openBrowser();
-        LoggerHandler.createLogInfo("driver initialise");
+        LoggerHandler.info("driver initialise");
 
     }
      @Test( enabled = false)
