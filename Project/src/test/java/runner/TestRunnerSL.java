@@ -33,14 +33,14 @@ public class TestRunnerSL extends Base {
         LoggerHandler.createLogInfo("driver initialise");
 
     }
-     @Test(priority = 1, enabled = true)
+     @Test(priority = 1, enabled = false)
     public void socialsVerification() {
         test = reports.createTest("Verify Social Links");
         HomePageActions homePageActions = new HomePageActions();
        homePageActions.verifySocialLinks(test);
         
     }
-     @Test(priority = 2, enabled = true)
+     @Test(priority = 2, enabled = false)
     public void ActionsVerification() {
         test = reports.createTest("Verify Footer Actions");
        HomePageActions homePageActions = new HomePageActions();

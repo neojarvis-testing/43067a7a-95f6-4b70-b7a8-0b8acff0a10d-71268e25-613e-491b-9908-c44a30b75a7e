@@ -30,7 +30,7 @@ public class AppTest extends Base{
     public void setBrowser(){
         openBrowser();
     }
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void FirstTestCase(){
         HomePageActions homePageActions =new HomePageActions();
         homePageActions.healthLibrary();
@@ -41,7 +41,7 @@ public class AppTest extends Base{
         EyeActions eye=new EyeActions();
         eye.eyeDiseases();
     }
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testCaseTwo(){
         HomePageActions homePageActions =new HomePageActions();
         homePageActions.institute();

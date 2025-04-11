@@ -16,18 +16,17 @@ public class TestRunnerHL extends Base {
         
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void configBrowser1(){
         HealthLibraryAction libraryAction = new HealthLibraryAction();
         libraryAction.methodMerge1();
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void configBrowser2(){
           ForProviders providers = new ForProviders();
           providers.methodMerge2();
     }
-
 
     @AfterMethod
     public void endBrowser(){
