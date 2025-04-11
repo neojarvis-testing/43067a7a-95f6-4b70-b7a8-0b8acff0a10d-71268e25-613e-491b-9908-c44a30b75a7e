@@ -1,10 +1,11 @@
 package pages;
 
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
+
 
 import uistore.FindADoctorLocators;
 import utils.Base;
+
 import utils.ReportHelper;
 import utils.Screenshot;
 import utils.WebDriverHelper;
@@ -38,6 +39,7 @@ public class FindADoctorActions
         driverHelper.switchWindow();
         Screenshot.screenShotAndHighlight(Base.driver, FindADoctorLocators.FindADoctorLocators_Label, "Find Doctor");
         ReportHelper.attachScreenshotToReport("Find Doctor", test,"testing");
+       
     }
     public void findADoctorAction(ExtentTest test)
     {

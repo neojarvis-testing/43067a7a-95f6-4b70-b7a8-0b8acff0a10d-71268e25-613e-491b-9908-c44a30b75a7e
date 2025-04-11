@@ -31,7 +31,7 @@ public class TestRunnerHL extends Base {
 
     @AfterMethod
     public void endBrowser(){
-    //driver.quit();
+    driver.quit();
     }
 
 }

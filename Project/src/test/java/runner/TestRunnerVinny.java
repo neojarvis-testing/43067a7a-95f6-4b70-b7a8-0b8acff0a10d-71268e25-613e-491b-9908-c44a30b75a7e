@@ -8,10 +8,10 @@ import org.testng.annotations.Test;
 import pages.RespiratoryAction;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import pages.AppointmentsActions;
-import pages.FindADoctorActions;
+
+
 import pages.HomePageActions;
-import pages.RequestAppointmentActions;
+
 import utils.Base;
 import utils.ReportHelper;
 
@@ -30,13 +30,14 @@ public class TestRunnerVinny extends Base {
 
     }
 
-    @Test
-    public void create() throws Exception {
+    @Test(priority = 1, enabled = true)
+    public void create()  {
         HomePageActions home = new HomePageActions();
         RespiratoryAction resp = new RespiratoryAction();
         home.searchAll();
         resp.respiratoryAll();
-    }
+          
+     }
 
     @AfterMethod
     public void closeBrowser() {
@@ -45,7 +46,7 @@ public class TestRunnerVinny extends Base {
 
     @AfterClass
     public void flushReport() {
-        reports.flush();
+        ReportHelper.extentReportFlush();
     }
 
 }

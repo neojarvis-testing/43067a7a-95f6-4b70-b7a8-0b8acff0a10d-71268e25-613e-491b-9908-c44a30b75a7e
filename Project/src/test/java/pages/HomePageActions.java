@@ -29,11 +29,13 @@ public class HomePageActions {
         driverHelper.clickTheElement(HomePageLocators.institueAndDepat);
     }
   
-  public void searchOperation() throws Exception
+  public void searchOperation()
 {
     driverHelper.clickTheElement(HomePageLocators.search);
+   // test.log(Status.PASS, "Clicked on SearchBar");
     driverHelper.clickTheElement(HomePageLocators.searchbar);
     driverHelper.typeText(HomePageLocators.searchbar, "Respiratory");
+   // test.log(Status.PASS, "Entered Respiratory");
    
     driverHelper.pressEnter(HomePageLocators.searchbar);
     String title = Base.driver.getTitle();
@@ -44,7 +46,7 @@ public class HomePageActions {
      driverHelper.retrieveText(HomePageLocators.verifyResp);
 }
   
-public void searchAll() throws Exception
+public void searchAll()
 {
     searchOperation();
 }
