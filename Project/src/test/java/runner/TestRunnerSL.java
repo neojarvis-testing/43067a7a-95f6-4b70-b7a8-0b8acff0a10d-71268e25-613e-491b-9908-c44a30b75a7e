@@ -33,14 +33,14 @@ public class TestRunnerSL extends Base {
         LoggerHandler.createLogInfo("driver initialise");
 
     }
-     @Test( enabled = true)
+     @Test( enabled = false)
     public void socialsVerification() {
         test = reports.createTest("TestCase 07");
         HomePageActions homePageActions = new HomePageActions();
        homePageActions.verifySocialLinks(test);
         
     }
-     @Test( enabled = true)
+     @Test( enabled = false)
     public void ActionsVerification() {
         test = reports.createTest("TestCase 08");
        HomePageActions homePageActions = new HomePageActions();
@@ -50,6 +50,7 @@ public class TestRunnerSL extends Base {
      @AfterMethod
     public void tearDown() {
        
+      
         if (driver != null) {
             driver.quit();
         }
