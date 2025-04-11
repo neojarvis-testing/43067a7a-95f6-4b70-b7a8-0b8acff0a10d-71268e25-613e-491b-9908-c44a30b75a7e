@@ -132,6 +132,7 @@ public class HomePageAction {
             LoggerHandler.createLogTextInfo(LocationPageLocators.signinsecond,"Element Visible");
             Screenshot.screenShotAndHighlight(Base.driver, LocationPageLocators.signinsecond, "Google Maps page");
             LoggerHandler.createLogTextInfo(LocationPageLocators.signinsecond,"Screenshot Captured");
+            LoggerHandler.createLogInfo("verify forms");    
             driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "2", "value"));
         } catch (Exception e) {
             e.printStackTrace();

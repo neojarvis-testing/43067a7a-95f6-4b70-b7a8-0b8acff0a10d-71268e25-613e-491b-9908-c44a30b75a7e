@@ -1,9 +1,4 @@
 package utils;
-/**
-* This utility class provides methods to read specific cell values
-* from an Excel sheet using Apache POI library.
-*/
- 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -17,14 +12,14 @@ public class ExcelReader {
     public static XSSFWorkbook workbook = null;
     public static String cellValue = null;
  
-    /**
-     * Reads a cell value from the specified Excel sheet.
-     * 
-     * @param sheetName  The name of the sheet to read from.
-     * @param key        The value of the key column to search for.
-     * @param columnName The name of the column whose value needs to be fetched.
-     * @return The value of the cell corresponding to the specified key and column.
-     */
+    /*
+    * a. Method Name: readdata()
+    * b. Author Name: Md Saif Masoom
+    * c. Description: This method is used to Read the data from which is stored in Excel sheet
+    * d. Parameters: int rownumber, int colnumber
+    * e. Return type: String
+*/
+
     public static String readCellValue(String sheetName, String key, String columnName) {
         String filePath = System.getProperty("user.dir") + "/excel/data.xlsx";
  

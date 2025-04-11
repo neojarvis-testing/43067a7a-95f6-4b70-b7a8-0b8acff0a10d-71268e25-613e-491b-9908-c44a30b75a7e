@@ -14,8 +14,7 @@ public class InstituteActions {
 
     }
     public void pharmacyAction(){
-        // driverHelper.waitsec(3);
-        // driverHelper.scrollpixel(700);
+       
         driverHelper.hover(InstituteLocators.specilaSelect);
         
         driverHelper.clickTheElement(InstituteLocators.pharmacy);
