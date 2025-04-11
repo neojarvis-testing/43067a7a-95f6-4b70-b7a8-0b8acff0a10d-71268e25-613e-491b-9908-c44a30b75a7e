@@ -1,7 +1,7 @@
 package pages;
 
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
+
 
 import uistore.FindADoctorLocators;
 import utils.Base;

@@ -24,14 +24,15 @@ public class AppTest extends Base{
     ExtentReports reports;
     @BeforeClass
     public void report(){
-        reports=ReportHelper.createExtentReporter("name");
+        reports=ReportHelper.createExtentReporter("cleveland_Report");
     }
     @BeforeMethod
     public void setBrowser(){
         openBrowser();
     }
-    @Test(enabled = false)
-    public void FirstTestCase(){
+    @Test(enabled = true)
+    public void FirstTestCase()throws InterruptedException{
+        test=reports.createTest("cleveland_Report");
         HomePageActions homePageActions =new HomePageActions();
         homePageActions.healthLibrary();
         HealthLibraryActions healthLibraryActions=new HealthLibraryActions();
@@ -39,10 +40,11 @@ public class AppTest extends Base{
         BSOActions bso =new BSOActions();
         bso.eyeDiseases();
         EyeActions eye=new EyeActions();
-        eye.eyeDiseases();
+       // eye.eyeDiseases();
     }
-    @Test(enabled = false)
-    public void testCaseTwo(){
+    @Test(enabled = true)
+    public void testCaseTwo() throws InterruptedException{
+        test=reports.createTest("cleveland_Report");
         HomePageActions homePageActions =new HomePageActions();
         homePageActions.institute();
         InstituteActions institute=new InstituteActions();
@@ -51,15 +53,15 @@ public class AppTest extends Base{
         bloodMangement.bloodMethod();
         institute.pharmacyAction();
         PharmacyActions pharmacy=new PharmacyActions();
-        pharmacy.takeSurvey();
-        institute.contactAction();
+        pharmacy.takeSurvey(test);
+        institute.contactAction(test);
 
 
     }
    
     @AfterMethod
     public void driverClose(){
-        driver.quit();
+       driver.quit();
     }
     @AfterClass
     public void FlushReports(){
