@@ -1,6 +1,9 @@
 package pages;
 
 import java.time.Duration;
+
+import org.openqa.selenium.By;
+
 import uistore.HomePageLocators;
 import uistore.LocationPageLocators;
 import utils.Base;
@@ -47,13 +50,14 @@ public class HomePageAction {
             LoggerHandler.createLogTextInfo(LocationPageLocators.locationTypes, "Element visible");
             driverHelper.clickTheElement(LocationPageLocators.healthCentre);
             LoggerHandler.createLogTextInfo(LocationPageLocators.healthCentre, "Clicked");
-            Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-            
-            driverHelper.clickTheElement(LocationPageLocators.locationtypes1);
-            LoggerHandler.createLogTextInfo(LocationPageLocators.locationtypes1, "Clicked");
-            driverHelper.waitForVisibility(LocationPageLocators.locationtypes1, 10);
+           // Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+            Thread.sleep(3000);
+            // driverHelper.clickTheElement(LocationPageLocators.locationtypes1);
+            driverHelper.selectByValue(LocationPageLocators.locationtypes1, "Imaging & Radiology");
+            LoggerHandler.createLogInfo("Element Selected");
+            // driverHelper.waitForVisibility(LocationPageLocators.locationtypes1, 10);
             LoggerHandler.createLogTextInfo(LocationPageLocators.locationtypes1, "Element Visible");
-            driverHelper.clickTheElement(LocationPageLocators.imagingradiology);
+            // driverHelper.clickTheElement(LocationPageLocators.imagingradiology);
             LoggerHandler.createLogTextInfo(LocationPageLocators.locationtypes1, "Click");
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
             

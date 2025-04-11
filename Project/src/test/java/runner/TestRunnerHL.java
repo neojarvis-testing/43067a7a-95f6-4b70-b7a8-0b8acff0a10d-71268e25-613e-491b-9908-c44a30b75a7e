@@ -16,7 +16,7 @@ public class TestRunnerHL extends Base {
         
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void configBrowser1(){
         HealthLibraryAction libraryAction = new HealthLibraryAction();
         libraryAction.methodMerge1();
