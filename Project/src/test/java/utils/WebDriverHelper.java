@@ -35,7 +35,7 @@ public class WebDriverHelper {
     public void waitForVisibility(By locator, int timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-        LoggerHandler.createLogInfo("Wait till the Element " + locator + " is Visible");
+        LoggerHandler.info("Wait till the Element " + locator + " is Visible");
     }
  
     /**
@@ -48,7 +48,7 @@ public class WebDriverHelper {
     public void waitForClickability(By locator, int timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
         wait.until(ExpectedConditions.elementToBeClickable(locator));
-        LoggerHandler.createLogInfo("Wait till the Element " + locator + " is Clickable");
+        LoggerHandler.info("Wait till the Element " + locator + " is Clickable");
  
     }
  
@@ -62,7 +62,7 @@ public class WebDriverHelper {
     public void waitForTitle(String title, int timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
         wait.until(ExpectedConditions.titleContains(title));
-        LoggerHandler.createLogInfo("Wait till the Title Changed ");
+        LoggerHandler.info("Wait till the Title Changed ");
     }
  
  
@@ -76,7 +76,7 @@ public class WebDriverHelper {
     public void typeText(By locator, String data) {
         WebElement element = driver.findElement(locator);
         element.sendKeys(data);
-        LoggerHandler.createLogInfo("Inputed " + data + " in Input Field");
+        LoggerHandler.info("Inputed " + data + " in Input Field");
     }
  
     /**
@@ -88,7 +88,7 @@ public class WebDriverHelper {
      */
     public String retrieveText(By locator) {
         WebElement element = driver.findElement(locator);
-        LoggerHandler.createLogInfo("Retrived Text From " + locator);
+        LoggerHandler.info("Retrived Text From " + locator);
         return element.getText();
     }
  
@@ -102,7 +102,7 @@ public class WebDriverHelper {
         WebElement element = driver.findElement(locator);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
-        LoggerHandler.createLogInfo("Scrolled to the Element And Clicked ");
+        LoggerHandler.info("Scrolled to the Element And Clicked ");
     }
  
     /**
@@ -115,7 +115,7 @@ public class WebDriverHelper {
         WebElement element = driver.findElement(locator);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element);
-        LoggerHandler.createLogInfo("Scrolled Till the element is in View ");
+        LoggerHandler.info("Scrolled Till the element is in View ");
     }
  
     /**
@@ -131,7 +131,7 @@ public class WebDriverHelper {
                 driver.switchTo().window(ch);
             }
         }
-        LoggerHandler.createLogInfo("Driver Switched to new Window");
+        LoggerHandler.info("Driver Switched to new Window");
     }
  
     /**
@@ -143,7 +143,7 @@ public class WebDriverHelper {
     public void pressEnter(By locator) {
         WebElement element = driver.findElement(locator);
         element.sendKeys(Keys.ENTER);
-        LoggerHandler.createLogInfo("Enter Action Performed");
+        LoggerHandler.info("Enter Action Performed");
     }
  
     /**
@@ -155,7 +155,7 @@ public class WebDriverHelper {
     public void clickTheElement(By locator) {
         WebElement element = driver.findElement(locator);
         element.click();
-        LoggerHandler.createLogInfo("Clicked the Element with locator " + locator);
+        LoggerHandler.info("Clicked the Element with locator " + locator);
     }
  
     /**
@@ -167,7 +167,7 @@ public class WebDriverHelper {
     public void hover(By locator) {
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(locator)).pause(Duration.ofSeconds(2)).perform();
-        LoggerHandler.createLogInfo("Hovered Over the Element with locator " + locator);
+        LoggerHandler.info("Hovered Over the Element with locator " + locator);
     }
  
     /**
@@ -179,7 +179,7 @@ public class WebDriverHelper {
     public void hoverAndClick(By locator) {
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(locator)).pause(Duration.ofSeconds(2)).click().build().perform();
-        LoggerHandler.createLogInfo("Hovered Over the Element And Clicked the element with locator " + locator);
+        LoggerHandler.info("Hovered Over the Element And Clicked the element with locator " + locator);
     }
  
     /**
@@ -193,7 +193,7 @@ public class WebDriverHelper {
         WebElement dropdown = driver.findElement(locator);
         Select select = new Select(dropdown);
         select.selectByValue(value);
-        LoggerHandler.createLogInfo("Selected The Option from The DropDown with Value " + value);
+        LoggerHandler.info("Selected The Option from The DropDown with Value " + value);
     }
  
     /**
@@ -207,7 +207,7 @@ public class WebDriverHelper {
         WebElement dropdown = driver.findElement(locator);
         Select select = new Select(dropdown);
         select.selectByVisibleText(visibleText);
-        LoggerHandler.createLogInfo("Selected The Option from The DropDown with Visible Text " + visibleText);
+        LoggerHandler.info("Selected The Option from The DropDown with Visible Text " + visibleText);
     }
  
     /**
@@ -221,7 +221,7 @@ public class WebDriverHelper {
         WebElement dropdown = driver.findElement(locator);
         Select select = new Select(dropdown);
         select.selectByIndex(index);
-        LoggerHandler.createLogInfo("Selected The Option from The DropDown with Index " + index);
+        LoggerHandler.info("Selected The Option from The DropDown with Index " + index);
     }
  
     /**
@@ -235,9 +235,9 @@ public class WebDriverHelper {
         try {
             String actualUrl = driver.getCurrentUrl();
             Assert.assertEquals(actualUrl, expectedUrl);
-            LoggerHandler.createLogInfo("Verified The Url");
+            LoggerHandler.info("Verified The Url");
         } catch (AssertionError e) {
-            LoggerHandler.createLogInfo("Url Mismatch");
+            LoggerHandler.info("Url Mismatch");
             e.printStackTrace();
         }
     }
@@ -253,10 +253,10 @@ public class WebDriverHelper {
         try {
             String actualTitle = driver.getTitle();
             Assert.assertEquals(actualTitle, expectedTitle);
-            LoggerHandler.createLogInfo("Verified The Title");
+            LoggerHandler.info("Verified The Title");
         } catch (AssertionError e) {
             e.printStackTrace();
-            LoggerHandler.createLogInfo("Title Mismatch" + e.getMessage());
+            LoggerHandler.info("Title Mismatch" + e.getMessage());
         }
  
     }
@@ -272,6 +272,6 @@ public class WebDriverHelper {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element);
         element.click();
-        LoggerHandler.createLogInfo("Scrolled Till The Element And Clicked The Element");
+        LoggerHandler.info("Scrolled Till The Element And Clicked The Element");
     }
 }

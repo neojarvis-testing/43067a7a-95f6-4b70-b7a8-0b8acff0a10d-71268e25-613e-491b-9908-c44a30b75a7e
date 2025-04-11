@@ -27,7 +27,7 @@ public class ExcelReader {
 
 
     public static String readCellValue(String sheetName, String key, String columnName) {
-        String filePath = System.getProperty("user.dir") + "/excel/data.xlsx";
+        String filePath = System.getProperty("user.dir") + "/testdata/data.xlsx";
  
         try {
             file = new FileInputStream(filePath);
