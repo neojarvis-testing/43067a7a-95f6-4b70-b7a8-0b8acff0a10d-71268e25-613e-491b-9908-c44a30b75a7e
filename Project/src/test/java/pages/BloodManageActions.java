@@ -2,6 +2,7 @@ package pages;
  
 import uistore.BloodManageLocators;
 import utils.Base;
+import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
  
