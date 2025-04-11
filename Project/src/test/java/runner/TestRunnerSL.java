@@ -24,7 +24,7 @@ public class TestRunnerSL extends Base {
 
     @BeforeClass
     public void reportSetup() {
-       reports = ReportHelper.createExtentReporter("Cleveland Clinic");
+       reports = ReportHelper.createExtentReporter("Cleveland Clinic ht");
     }
 
     @BeforeMethod
@@ -44,12 +44,12 @@ public class TestRunnerSL extends Base {
     public void ActionsVerification() {
         test = reports.createTest("TestCase 08");
        HomePageActions homePageActions = new HomePageActions();
-       
         homePageActions.verifyActionsFooter(test);
     }
 
      @AfterMethod
     public void tearDown() {
+       
       
         if (driver != null) {
             driver.quit();
