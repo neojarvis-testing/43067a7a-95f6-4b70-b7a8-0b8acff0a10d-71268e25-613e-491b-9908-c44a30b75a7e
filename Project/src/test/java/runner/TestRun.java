@@ -27,7 +27,7 @@ public class TestRun extends Base {
     openBrowser();
   }
 
-  @Test(enabled = true)
+  @Test(priority = 1,enabled = true)
   public void initializationtask() {
     test = reports.createTest("Sheet1");
     HomePageAction action = new HomePageAction();

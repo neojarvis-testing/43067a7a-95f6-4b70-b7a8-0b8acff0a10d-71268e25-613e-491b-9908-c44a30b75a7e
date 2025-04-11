@@ -15,11 +15,11 @@ public class HealthLibraryAction {
 
         //driverHelper.retrieveText(ExcelReader.readCellValue("Sheet1", "10", "value"));
         driverHelper.clickTheElement(HomePageLocators.healthLibrary_diseaseAndCondition);
-        driverHelper.waitForVisibility(HomePageLocators.healthLibrary_diseaseAndConditionNew, 2);
+        driverHelper.waitForVisibility(HomePageLocators.healthLibrary_diseaseAndConditionNew, 10);
      //   System.out.println(driverHelper.retrieveText(HomePageLocators.healthLibrary_diseaseAndConditionNew));
         //driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "1", "value"));
        // System.out.println(ExcelReader.readCellValue("Sheet1", "1", "value"));
-        driverHelper.waitForVisibility(HomePageLocators.healthLibrary_diseaseAndConditionNew, 2);
+        // driverHelper.waitForVisibility(HomePageLocators.healthLibrary_diseaseAndConditionNew, 10);
         driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "2", "value"));
 
         // if(Base.driver.getTitle().contains(ExcelReader.readCellValue("Sheet1", "2", "value"))){

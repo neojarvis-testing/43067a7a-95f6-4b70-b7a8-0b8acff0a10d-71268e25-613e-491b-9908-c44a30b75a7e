@@ -30,7 +30,7 @@ public class TestRunnerVinny extends Base {
 
     }
 
-    @Test
+    @Test(priority = 1,enabled = true)
     public void create() throws Exception {
         HomePageActions home = new HomePageActions();
         RespiratoryAction resp = new RespiratoryAction();

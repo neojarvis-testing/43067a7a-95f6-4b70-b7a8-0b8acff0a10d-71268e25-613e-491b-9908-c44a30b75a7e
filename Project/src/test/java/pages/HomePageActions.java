@@ -11,43 +11,96 @@ import utils.WebDriverHelper;
 public class HomePageActions {
     WebDriverHelper driverHelper = new WebDriverHelper(Base.driver);
   
-  public  void clickOnSchedule(ExtentTest test)
+    /**
+     * Author: Kiruthik Vijey Raj P
+     * This method clicks on the "Schedule Now" button on the home page.
+     * It logs the action using the provided ExtentTest object.
+     *
+     * @param test The ExtentTest object used for logging test information.
+     */
+
+    public  void clickOnSchedule(ExtentTest test)
     {
         driverHelper.clickTheElement(HomePageLocators.Appointments_ScheduleNow);
         test.log(Status.INFO, "Clicked on schedule now");
     }
+
+    
+    /**
+     * Author: Kiruthik Vijey Raj P
+     * This method clicks on the "Find a Doctor" button on the home page.
+     * It logs the action using the provided ExtentTest object.
+     *
+     * @param test The ExtentTest object used for logging test information.
+     */
+
     public  void clickOnFindADoctor(ExtentTest test)
     {
         driverHelper.clickTheElement(HomePageLocators.Appointments_Find_a_Doctor);
         test.log(Status.INFO, "Clicked on Request an Appointment");
     }
-  
-   public void healthLibrary(){
+    
+    /**
+     * Author: Vignesh B
+     * This method clicks on the "Health Library" link on the home page.
+     * It is useful for navigating to the Health Library section of the website.
+     */
+
+    public void healthLibrary(){
         driverHelper.clickTheElement(HomePageLocators.healthLibrary);
     }
+        
+    /**
+     * Author: Vignesh B
+     * This method clicks on the "Institute and Department" link on the home page.
+     * It is useful for navigating to the Institute and Department section of the website.
+     */
+
     public void institute(){
         driverHelper.clickTheElement(HomePageLocators.institueAndDepat);
     }
-  
-  public void searchOperation() throws Exception
-{
-    driverHelper.clickTheElement(HomePageLocators.search);
-    driverHelper.clickTheElement(HomePageLocators.searchbar);
-    driverHelper.typeText(HomePageLocators.searchbar, "Respiratory");
-   
-    driverHelper.pressEnter(HomePageLocators.searchbar);
-    String title = Base.driver.getTitle();
-    driverHelper.verifyTitle(title);
     
-    driverHelper.waitForClickability(HomePageLocators.firstResp, 2);
-     driverHelper.clickTheElement(HomePageLocators.firstResp);
-     driverHelper.retrieveText(HomePageLocators.verifyResp);
-}
-  
-public void searchAll() throws Exception
-{
-    searchOperation();
-}
+    
+    /**
+     * Author: Vinny Claret.A
+     * This method performs a search operation on the home page.
+     * It clicks on the search icon, enters the search term "Respiratory", and presses Enter.
+     * It then verifies the page title, waits for an element to be clickable, clicks it, and retrieves text from another element.
+     *
+     * @throws Exception If an error occurs during the search operation.
+     */
+    public void searchOperation()
+    {
+        driverHelper.clickTheElement(HomePageLocators.search);
+        driverHelper.clickTheElement(HomePageLocators.searchbar);
+        driverHelper.typeText(HomePageLocators.searchbar, "Respiratory");
+    
+        driverHelper.pressEnter(HomePageLocators.searchbar);
+        String title = Base.driver.getTitle();
+        driverHelper.verifyTitle(title);
+        
+        driverHelper.waitForClickability(HomePageLocators.firstResp, 2);
+        driverHelper.clickTheElement(HomePageLocators.firstResp);
+        driverHelper.retrieveText(HomePageLocators.verifyResp);
+    }
+    
+    /**
+     * Author: Vinny Claret. A
+     * This method performs a search operation by calling the searchOperation method.
+     *
+     * @throws Exception If an error occurs during the search operation.
+     */
+
+    public void searchAll()
+    {
+        searchOperation();
+    }
+    
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the Facebook social link on the home page.
+     * It takes a screenshot, switches to the new window, and then closes it.
+     */
 
     public void clickFaceBook(){
         String mainWindowHandle = Base.driver.getWindowHandle();
@@ -58,6 +111,13 @@ public void searchAll() throws Exception
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);        
     }
+    
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the Twitter social link on the home page.
+     * It switches to the new window and then closes it.
+     */
+
     public void clickTwitter(){
         String mainWindowHandle = Base.driver.getWindowHandle();
         driverHelper.clickTheElement(HomePageLocators.twitterSocialLink);
@@ -66,6 +126,13 @@ public void searchAll() throws Exception
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
+    
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the YouTube social link on the home page.
+     * It switches to the new window and then closes it.
+     */
+
     public void clickYoutube(){
         String mainWindowHandle = Base.driver.getWindowHandle();
         driverHelper.clickTheElement(HomePageLocators.youtubeSocialLink);
@@ -74,6 +141,13 @@ public void searchAll() throws Exception
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
+    
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the Instagram social link on the home page.
+     * It switches to the new window and then closes it.
+     */
+
     public void clickInstagram(){
         String mainWindowHandle = Base.driver.getWindowHandle();
         driverHelper.clickTheElement(HomePageLocators.instagramSocialLink);
@@ -82,6 +156,13 @@ public void searchAll() throws Exception
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
+        
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the LinkedIn social link on the home page.
+     * It switches to the new window and then closes it.
+     */
+
     public void clickLinkedIn(){
         String mainWindowHandle = Base.driver.getWindowHandle();
         driverHelper.clickTheElement(HomePageLocators.linkedinSocialLink);
@@ -90,6 +171,13 @@ public void searchAll() throws Exception
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
+    
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the Pinterest social link on the home page.
+     * It switches to the new window and then closes it.
+     */
+
     public void clickPinterest(){
         String mainWindowHandle = Base.driver.getWindowHandle();
         driverHelper.clickTheElement(HomePageLocators.pinterestSocialLink);
@@ -98,6 +186,13 @@ public void searchAll() throws Exception
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
+    
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the Snapchat social link on the home page.
+     * It switches to the new window and then closes it.
+     */
+
     public void clickSnapchat(){
         String mainWindowHandle = Base.driver.getWindowHandle();
         driverHelper.clickTheElement(HomePageLocators.snapchatSocialLink);
@@ -106,6 +201,12 @@ public void searchAll() throws Exception
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
+    
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the "Appointments Access" link on the home page.
+     * It scrolls to the element, clicks it, and then navigates back.
+     */
 
     public void clickAppointmentsAccess(){
         driverHelper.scrollToElement(HomePageLocators.appointmentsActions);
@@ -113,12 +214,26 @@ public void searchAll() throws Exception
         // driverHelper.verifyUrl("https://my.clevelandclinic.org/patients/information/access");
         Base.driver.navigate().back();
     }
+    
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the "Accepted Insurance" link on the home page.
+     * It scrolls to the element, clicks it, and then navigates back.
+     */
+
     public void clickAcceptedInsurance(){
         driverHelper.scrollToElement(HomePageLocators.acceptedInsuranceActions);
         driverHelper.clickTheElement(HomePageLocators.acceptedInsuranceActions);
         // driverHelper.verifyUrl("https://my.clevelandclinic.org/patients/accepted-insurance");
         Base.driver.navigate().back();
     }
+    
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the "Accepted Insurance" link on the home page.
+     * It scrolls to the element, clicks it, and then navigates back.
+     */
+
     public void clickEventsCalender(){
         String mainWindowHandle = Base.driver.getWindowHandle();
         driverHelper.scrollToElement(HomePageLocators.eventsCalenderActions);
@@ -128,24 +243,52 @@ public void searchAll() throws Exception
         Base.driver.close();
         Base.driver.switchTo().window(mainWindowHandle);
     }
+    
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the "Accepted Insurance" link on the home page.
+     * It scrolls to the element, clicks it, and then navigates back.
+     */
+
     public void clickFinancialAssistance(){
         driverHelper.scrollToElement(HomePageLocators.financialAssistanceActions);
         driverHelper.clickTheElement(HomePageLocators.financialAssistanceActions);
         // driverHelper.verifyUrl("https://my.clevelandclinic.org/patients/billing-finance/financial-assistance");
         Base.driver.navigate().back();
     }
+    
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the "Give to Cleveland Clinic" link on the home page.
+     * It scrolls to the element, clicks it, and then navigates back.
+     */
+
     public void clickGiveCleveland(){
         driverHelper.scrollToElement(HomePageLocators.giveClevelandActions);
         driverHelper.clickTheElement(HomePageLocators.giveClevelandActions);
         // driverHelper.verifyUrl("https://my.clevelandclinic.org/giving");
         Base.driver.navigate().back();
     }
+    
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the "Pay Bill" link on the home page.
+     * It scrolls to the element, clicks it, and then navigates back.
+     */
+
     public void clickPayBill(){
         driverHelper.scrollToElement(HomePageLocators.payBillActions);
         driverHelper.clickTheElement(HomePageLocators.payBillActions);
         // driverHelper.verifyUrl("https://my.clevelandclinic.org/patients/billing-finance/payment-options");
         Base.driver.navigate().back();
     }
+    
+    /**
+     * Author: Harshit Tomar
+     * This method clicks on the "Price Transparency" link on the home page.
+     * It scrolls to the element, clicks it, and then navigates back.
+     */
+
     public void clickPriceTransparency(){
         driverHelper.scrollToElement(HomePageLocators.priceTransparencyActions);
         driverHelper.clickTheElement(HomePageLocators.priceTransparencyActions);

@@ -22,7 +22,7 @@ public class TestRunnerHL extends Base {
         libraryAction.methodMerge1();
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void configBrowser2(){
           ForProviders providers = new ForProviders();
           providers.methodMerge2();
@@ -31,7 +31,7 @@ public class TestRunnerHL extends Base {
 
     @AfterMethod
     public void endBrowser(){
-    //driver.quit();
+    driver.quit();
     }
 
 }

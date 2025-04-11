@@ -26,7 +26,7 @@ public class ExcelReader {
      * @return The value of the cell corresponding to the specified key and column.
      */
     public static String readCellValue(String sheetName, String key, String columnName) {
-        String filePath = System.getProperty("user.dir") + "/excel/data.xlsx";
+        String filePath = System.getProperty("user.dir") + "/testdata/data.xlsx";
  
         try {
             file = new FileInputStream(filePath);
