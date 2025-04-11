@@ -21,7 +21,7 @@ public class PharmacyActions {
      * Author: Vignesh
      * Clicks 'takeSurvey,' switches windows, verifies forms, and navigates back.
      */
-    public void takeSurvey(ExtentTest test) throws InterruptedException {
+    public void takeSurvey(ExtentTest test) {
         driverHelper.waitForVisibility(PharmacyLocators.takeSurvey, 3);
         JavascriptExecutor js = (JavascriptExecutor) Base.driver;
         js.executeScript("window.scrollBy(0,1000)", "");

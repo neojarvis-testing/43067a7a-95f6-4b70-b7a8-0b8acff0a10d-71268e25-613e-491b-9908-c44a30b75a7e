@@ -46,21 +46,21 @@ public class AppTest extends Base{
        
         test=reports.createTest("test");        
         HomePageActions homePageActions =new HomePageActions();
-        homePageActions.institute();
+        homePageActions.institute(test);
         InstituteActions institute=new InstituteActions();
-        institute.bloodacction();
+        institute.bloodacction(test);
         BloodManageActions bloodMangement=new BloodManageActions();
         bloodMangement.bloodMethod();
-        institute.pharmacyAction();
+        institute.pharmacyAction(test);
         PharmacyActions pharmacy=new PharmacyActions();
         pharmacy.takeSurvey(test);
         ContactActions contactActions=new ContactActions();
-        contactActions.clickContact();
-        contactActions.viewPhoneDirect();
-        contactActions.clickClevelanHome();
-        homePageActions.clickNeedHelp();
+        contactActions.clickContact(test);
+        contactActions.viewPhoneDirect(test);
+        contactActions.clickClevelanHome(test);
+        homePageActions.clickNeedHelp(test);
         contactActions.verifyParking(test);
-        contactActions.tillVirtualSecond();
+        contactActions.tillVirtualSecond(test);
         contactActions.getScreenshot(test);
     }
    
