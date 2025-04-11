@@ -64,7 +64,7 @@ public class ContactActions {
     public void verifyParking(ExtentTest test) {
         driverHelper.hover(NeedHelpLocators.parking);
         driverHelper.scrollToElementandCLick(NeedHelpLocators.parking);
-        LoggerHandler.createLogInfo("click on parking");
+        LoggerHandler.info("click on parking");
         test.log(Status.INFO, "click on parking");
     }
  
