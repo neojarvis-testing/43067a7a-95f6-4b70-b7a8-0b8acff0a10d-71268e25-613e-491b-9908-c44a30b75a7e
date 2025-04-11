@@ -16,3 +16,4 @@ public class HealthLibraryActions{
         driverHelper.clickTheElement(HealthLibraryLocators.eyes);
     }
 }
+ 

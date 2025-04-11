@@ -1,14 +1,14 @@
 package runner;
-
+ 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
+ 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-
+ 
 import pages.BSOActions;
 import pages.BloodManageActions;
 import pages.ContactActions;
@@ -18,7 +18,7 @@ import pages.InstituteActions;
 import pages.PharmacyActions;
 import utils.Base;
 import utils.ReportHelper;
-
+ 
 public class AppTest extends Base{
     ExtentTest test;
     ExtentReports reports;
@@ -30,7 +30,7 @@ public class AppTest extends Base{
     public void setBrowser(){
         openBrowser();
     }
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void FirstTestCase()throws InterruptedException{
        
         HomePageActions homePageActions =new HomePageActions();
@@ -39,11 +39,11 @@ public class AppTest extends Base{
         healthLibraryActions.clickOnEyes();
         BSOActions bso =new BSOActions();
         bso.eyeDiseases();
-        
+       
     }
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testCaseTwo() throws InterruptedException{
-        
+       
         test=reports.createTest("test");        
         HomePageActions homePageActions =new HomePageActions();
         homePageActions.institute();

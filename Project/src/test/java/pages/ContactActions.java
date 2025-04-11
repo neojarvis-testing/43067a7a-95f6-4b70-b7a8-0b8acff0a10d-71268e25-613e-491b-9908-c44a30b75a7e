@@ -1,8 +1,8 @@
 package pages;
-
+ 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
+ 
 import uistore.ContactLocators;
 import uistore.InstituteLocators;
 import uistore.NeedHelpLocators;
@@ -11,7 +11,7 @@ import utils.LoggerHandler;
 import utils.ReportHelper;
 import utils.Screenshot;
 import utils.WebDriverHelper;
-
+ 
 /**
  * Author: Vignesh
  * The ContactActions class contains methods for navigating through contact-related
@@ -19,7 +19,7 @@ import utils.WebDriverHelper;
  */
 public class ContactActions {
     WebDriverHelper driverHelper = new WebDriverHelper(Base.driver);
-
+ 
     /**
      * Author: Vignesh
      * Navigates to and clicks on the contact button after ensuring its visibility and readiness.
@@ -30,7 +30,7 @@ public class ContactActions {
         driverHelper.waitForClickability(InstituteLocators.contact, 3);
         driverHelper.clickTheElement(InstituteLocators.contact);
     }
-
+ 
     /**
      * Author: Vignesh
      * Verifies the visibility of the contact options and performs actions to view
@@ -42,7 +42,7 @@ public class ContactActions {
         driverHelper.clickTheElement(ContactLocators.viewPhone);
         driverHelper.clickTheElement(ContactLocators.contactCleveland);
     }
-
+ 
     /**
      * Author: Vignesh
      * Navigates to and clicks on the Cleveland home page contact link. Handles
@@ -53,7 +53,7 @@ public class ContactActions {
         driverHelper.hover(ContactLocators.contactClevelandhome);
         driverHelper.clickTheElement(ContactLocators.contactClevelandhome);
     }
-
+ 
     /**
      * Author: Vignesh
      * Verifies and clicks on the parking section element for additional information.
@@ -67,7 +67,7 @@ public class ContactActions {
         LoggerHandler.createLogInfo("click on parking");
         test.log(Status.INFO, "click on parking");
     }
-
+ 
     /**
      * Author: Vignesh
      * Performs a sequence of actions to navigate through and interact with the
@@ -80,7 +80,7 @@ public class ContactActions {
         driverHelper.scrollToElement(NeedHelpLocators.virtualSecond);
         driverHelper.scrollToElementandCLick(NeedHelpLocators.virtualSecond);
     }
-
+ 
     /**
      * Author: Vignesh
      * Captures a screenshot of the current page when clicking the "Get Started" button

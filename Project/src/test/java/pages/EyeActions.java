@@ -1,11 +1,11 @@
 package pages;
-
+ 
 import org.openqa.selenium.JavascriptExecutor;
-
+ 
 import uistore.EyeLocators;
 import utils.Base;
 import utils.WebDriverHelper;
-
+ 
 public class EyeActions {
     WebDriverHelper driverHelper = new WebDriverHelper(Base.driver);
     /**
@@ -26,10 +26,10 @@ public class EyeActions {
         driverHelper.scrollToElementandCLick(EyeLocators.allergies);
         driverHelper.switchWindow();
         Base.driver.close();
-
+ 
         Base.driver.switchTo().window(cwindow);
-
+ 
         Base.driver.navigate().back();
-
+ 
     }
 }

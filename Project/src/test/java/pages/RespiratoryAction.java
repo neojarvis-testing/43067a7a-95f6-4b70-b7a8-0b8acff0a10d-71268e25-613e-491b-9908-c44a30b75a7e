@@ -8,7 +8,7 @@ import utils.WebDriverHelper;
 
 public class RespiratoryAction {
     WebDriverHelper help = new WebDriverHelper(Base.driver);
-public void respOperation() throws InterruptedException
+public void respOperation() 
 {
    help.hoverAndClick(RespiratoryLocators.Introduction);
    String intro = Base.driver.getTitle();
@@ -19,7 +19,7 @@ public void respOperation() throws InterruptedException
 
 
 }
-public void doctorFilters() throws InterruptedException
+public void doctorFilters() 
 {   Base.driver.navigate().back();
     Base.driver.navigate().back();
     Base.driver.navigate().back();
@@ -43,7 +43,7 @@ public void doctorSelect()
     help.retrieveText(RespiratoryLocators.doctorInfo);
     Screenshot.screenShotAndHighlight(Base.driver,RespiratoryLocators.doctorInfo,"Doctor's profile");
 }
-public void respiratoryAll() throws InterruptedException
+public void respiratoryAll() 
 {
     respOperation();
     doctorFilters();
