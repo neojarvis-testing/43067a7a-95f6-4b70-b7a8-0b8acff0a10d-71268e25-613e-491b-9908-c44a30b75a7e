@@ -12,13 +12,19 @@ public class ExcelReader {
     public static XSSFWorkbook workbook = null;
     public static String cellValue = null;
  
-    /*
-    * a. Method Name: readdata()
-    * b. Author Name: Md Saif Masoom
-    * c. Description: This method is used to Read the data from which is stored in Excel sheet
-    * d. Parameters: int rownumber, int colnumber
-    * e. Return type: String
-*/
+   
+/**
+     * Author: Md Saif Masoom
+     * Reads the value of a cell from an Excel sheet.
+     * This method reads the value of a cell from the specified sheet, identified by the key and column name.
+     * It opens the Excel file, locates the sheet, and retrieves the cell value based on the provided key and column name.
+     *
+     * @param sheetName  The name of the sheet to read from.
+     * @param key        The key to identify the row.
+     * @param columnName The name of the column to read the value from.
+     * @return The value of the cell as a String.
+     */
+
 
     public static String readCellValue(String sheetName, String key, String columnName) {
         String filePath = System.getProperty("user.dir") + "/excel/data.xlsx";

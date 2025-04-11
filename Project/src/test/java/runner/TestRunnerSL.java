@@ -30,7 +30,7 @@ public class TestRunnerSL extends Base {
     @BeforeMethod
     public void baseMethod() {
         openBrowser();
-        LoggerHandler.createLogInfo("driver initialise");
+        LoggerHandler.info("driver initialise");
 
     }
      @Test( enabled = false)
@@ -50,7 +50,7 @@ public class TestRunnerSL extends Base {
 
      @AfterMethod
     public void tearDown() {
-        LoggerHandler.createLogInfo("quit driver");
+        LoggerHandler.info("quit driver");
         if (driver != null) {
             driver.quit();
         }
