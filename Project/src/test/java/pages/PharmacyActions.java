@@ -30,7 +30,7 @@ public class PharmacyActions {
         driverHelper.clickTheElement(PharmacyLocators.takeSurvey);
         driverHelper.switchWindow();
         test.log(Status.PASS, "click on parking");
-        LoggerHandler.createLogInfo("verify forms");
+        LoggerHandler.info("verify forms");
         test.log(Status.INFO, "verify forms");
         Base.driver.close();
         Base.driver.switchTo().window(cwindow);

@@ -35,8 +35,7 @@ public class InstituteActions {
         driverHelper.waitForClickability(InstituteLocators.specilaSelect, 3);
         driverHelper.hover(InstituteLocators.specilaSelect);
         driverHelper.clickTheElement(InstituteLocators.pharmacy);
-        LoggerHandler.createLogInfo("verify forms");
-        test.log(Status.INFO, "Clicked on Pharmacy");
+        LoggerHandler.info("verify forms");
     }
 }
  
