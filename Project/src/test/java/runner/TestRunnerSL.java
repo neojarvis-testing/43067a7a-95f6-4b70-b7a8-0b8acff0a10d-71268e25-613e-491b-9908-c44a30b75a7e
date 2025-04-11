@@ -24,7 +24,7 @@ public class TestRunnerSL extends Base {
 
     @BeforeClass
     public void reportSetup() {
-       reports = ReportHelper.createExtentReporter("Cleveland Clinic");
+       reports = ReportHelper.createExtentReporter("Cleveland Clinic ht");
     }
 
     @BeforeMethod
@@ -35,21 +35,21 @@ public class TestRunnerSL extends Base {
     }
      @Test( enabled = true)
     public void socialsVerification() {
-        test = reports.createTest("Verify Social Links");
+        test = reports.createTest("TestCase 07");
         HomePageActions homePageActions = new HomePageActions();
        homePageActions.verifySocialLinks(test);
         
     }
      @Test( enabled = true)
     public void ActionsVerification() {
-        test = reports.createTest("Verify Footer Actions");
+        test = reports.createTest("TestCase 08");
        HomePageActions homePageActions = new HomePageActions();
         homePageActions.verifyActionsFooter(test);
     }
 
      @AfterMethod
     public void tearDown() {
-        LoggerHandler.createLogInfo("quit driver");
+       
         if (driver != null) {
             driver.quit();
         }
