@@ -16,7 +16,7 @@ public class HomePageAction {
 
             driverHelper.hover(HomePageLocators.getDirection);
             driverHelper.clickTheElement(HomePageLocators.getDirection);
-            LoggerHandler.info("Clicked");
+            // LoggerHandler.info("Clicked");
         } catch (Exception e) {
 
             e.printStackTrace();

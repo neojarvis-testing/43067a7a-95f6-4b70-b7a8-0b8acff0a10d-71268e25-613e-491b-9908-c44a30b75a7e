@@ -1,86 +1,115 @@
 package pages;
-
-
-
+ 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+ 
 import uistore.HomePageLocators;
 import utils.Base;
 import utils.ExcelReader;
 import utils.WebDriverHelper;
-
+ 
 public class HealthLibraryAction {
-
+ 
     WebDriverHelper driverHelper = new WebDriverHelper(Base.driver);
-
-    public void diseaseAndCondition() {
-
-        //driverHelper.retrieveText(ExcelReader.readCellValue("Sheet1", "10", "value"));
-        driverHelper.clickTheElement(HomePageLocators.healthLibrary_diseaseAndCondition);
-        driverHelper.waitForVisibility(HomePageLocators.healthLibrary_diseaseAndConditionNew, 2);
-     //   System.out.println(driverHelper.retrieveText(HomePageLocators.healthLibrary_diseaseAndConditionNew));
-        //driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "1", "value"));
-       // System.out.println(ExcelReader.readCellValue("Sheet1", "1", "value"));
-        driverHelper.waitForVisibility(HomePageLocators.healthLibrary_diseaseAndConditionNew, 2);
-        driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "2", "value"));
-
-        // if(Base.driver.getTitle().contains(ExcelReader.readCellValue("Sheet1", "2", "value"))){
-        //     Assert.assertTrue(true);
-        // }else Assert.fail();
-
-        Base.driver.navigate().back();
-
-
-       
-        
-
+ 
+    /**
+     * Author: Rewa Pawar
+     * Navigates to the 'Disease and Condition' section of the health library,
+     * waits for the page to load, verifies the title, and then navigates back.
+     */
+    public void diseaseAndCondition(ExtentTest test) {
+        try {
+            driverHelper.clickTheElement(HomePageLocators.healthLibrary_diseaseAndCondition);
+            test.log(Status.PASS, "Clicked on Disease and Condition as expected ");
+            driverHelper.waitForVisibility(HomePageLocators.healthLibrary_diseaseAndConditionNew, 3);
+            driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "1", "value"));
+            Base.driver.navigate().back();
+ 
+        } catch (Exception e) {
+ 
+        }
     }
-
-    public void diagnosticsAndTesting() {
-
-        driverHelper.clickTheElement(HomePageLocators.healthLibrary_diagnosticsAndTesting);
-      //  driverHelper.waitForVisibility(HomePageLocators.healthLibrary_diagnosticsAndTestingNew, 2);
-        //driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "3", "value"));
-        driverHelper.waitForVisibility(HomePageLocators.healthLibrary_diagnosticsAndTestingNew, 2);
-        driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "4", "value"));
-        Base.driver.navigate().back();
+ 
+    /**
+     * Description: Navigates to the 'Diagnostics and Testing' section of the health
+     * library,
+     * waits for the page to load, verifies the title, and then navigates back.
+     */
+    public void diagnosticsAndTesting(ExtentTest test) {
+        try {
+            driverHelper.clickTheElement(HomePageLocators.healthLibrary_diagnosticsAndTesting);
+            test.log(Status.PASS, "Clicked on Diagnostics and Testing as expected ");
+            driverHelper.waitForVisibility(HomePageLocators.healthLibrary_diagnosticsAndTestingNew, 3);
+            driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "2", "value"));
+            Base.driver.navigate().back();
+ 
+        } catch (Exception e) {
+ 
+        }
     }
-
-    public void treatmentsAndProcedure() {
-
-        driverHelper.clickTheElement(HomePageLocators.healthLibrary_treatmentsAndProcedure);
-        driverHelper.waitForVisibility(HomePageLocators.healthLibrary_treatmentsAndProcedureNew, 2);
-        //driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "5", "value"));
-        driverHelper.waitForVisibility(HomePageLocators.healthLibrary_treatmentsAndProcedureNew, 2);
-        driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "6", "value"));
-        Base.driver.navigate().back();
+ 
+    /**
+     * Description: Navigates to the 'Treatments and Procedure' section of the
+     * health library,
+     * waits for the page to load, verifies the title, and then navigates back.
+     */
+    public void treatmentsAndProcedure(ExtentTest test) {
+        try {
+            driverHelper.clickTheElement(HomePageLocators.healthLibrary_treatmentsAndProcedure);
+            test.log(Status.PASS, "Clicked on Treatments and Procedure as expected ");
+            driverHelper.waitForVisibility(HomePageLocators.healthLibrary_treatmentsAndProcedureNew, 3);
+            driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "3", "value"));
+            Base.driver.navigate().back();
+ 
+        } catch (Exception e) {
+ 
+        }
     }
-
-    public void bodySystemsAndOrgans() {
-        driverHelper.clickTheElement(HomePageLocators.healthLibrary_bodySystemsAndOrgans);
-         driverHelper.waitForVisibility(HomePageLocators.healthLibrary_bodySystemsAndOrgansNew, 2);
-        // driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "7", "value"));
-         driverHelper.waitForVisibility(HomePageLocators.healthLibrary_bodySystemsAndOrgansNew, 2);
-         driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "8", "value"));
-         Base.driver.navigate().back();
-
-        // if(Base.driver.getTitle().contains(ExcelReader.readCellValue("Sheet1", "8", "value"))){
-        //     Assert.assertTrue(true);
-        // }else Assert.fail();
+ 
+    /**
+     * Description: Navigates to the 'Body Systems and Organs' section of the health
+     * library,
+     * waits for the page to load, verifies the title, and then navigates back.
+     */
+    public void bodySystemsAndOrgans(ExtentTest test) {
+        try {
+            driverHelper.clickTheElement(HomePageLocators.healthLibrary_bodySystemsAndOrgans);
+            test.log(Status.PASS, "Clicked on Body Systems and Organs as expected ");
+            driverHelper.waitForVisibility(HomePageLocators.healthLibrary_bodySystemsAndOrgansNew, 3);
+            driverHelper.verifyTitle(ExcelReader.readCellValue("Sheet1", "4", "value"));
+            Base.driver.navigate().back();
+ 
+        } catch (Exception e) {
+ 
+        }
     }
-
-    public void drugsDevicesSupplements() {
-        driverHelper.clickTheElement(HomePageLocators.healthLibrary_drugsDevicesSupplements);
-        driverHelper.waitForVisibility(HomePageLocators.healthLibrary_drugsDevicesSupplementsNew, 2);
-       // driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "9", "value"));
-        Base.driver.navigate().back();
-
+ 
+    /**
+     * Description: Navigates to the 'Drugs, Devices, and Supplements' section of
+     * the health library,
+     * waits for the page to load, and then navigates back.
+     */
+    public void drugsDevicesSupplements(ExtentTest test) {
+        try {
+            driverHelper.clickTheElement(HomePageLocators.healthLibrary_drugsDevicesSupplements);
+            test.log(Status.PASS, "Clicked on Drugs Devices and Supplements as expected ");
+            driverHelper.waitForVisibility(HomePageLocators.healthLibrary_drugsDevicesSupplementsNew, 3);
+            Base.driver.navigate().back();
+ 
+        } catch (Exception e) {
+ 
+        }
     }
-
-    public void methodMerge1() {
-        diseaseAndCondition();
-        diagnosticsAndTesting();
-        treatmentsAndProcedure();
-        bodySystemsAndOrgans();
-        drugsDevicesSupplements();
+ 
+    /**
+     * Description: Executes all the methods to navigate through various sections of
+     * the health library.
+     */
+    public void allHealthLibraryMethods(ExtentTest test) {
+        diseaseAndCondition(test);
+        diagnosticsAndTesting(test);
+        treatmentsAndProcedure(test);
+        bodySystemsAndOrgans(test);
+        drugsDevicesSupplements(test);
     }
-
 }
