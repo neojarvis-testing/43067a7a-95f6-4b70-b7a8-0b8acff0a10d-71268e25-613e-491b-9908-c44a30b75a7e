@@ -26,7 +26,7 @@ public class AppointmentsActions
         driverHelper.verifyUrl("https://my.clevelandclinic.org/patients/information/access");
         driverHelper.clickTheElement(AppointmentsLocators.Appointments_Request);
         test.log(Status.INFO, "Clicked on schedule now");
-        LoggerHandler.createLogInfo("Clicked on schedule now");
+        LoggerHandler.info("Clicked on schedule now");
        
     }
 }
