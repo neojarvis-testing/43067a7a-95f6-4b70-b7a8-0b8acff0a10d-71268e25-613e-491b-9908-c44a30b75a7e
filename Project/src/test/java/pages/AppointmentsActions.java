@@ -1,16 +1,25 @@
 package pages;
-
+ 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
+ 
 import uistore.AppointmentsLocators;
 import utils.Base;
 import utils.LoggerHandler;
 import utils.WebDriverHelper;
-
-public class AppointmentsActions 
+ 
+public class AppointmentsActions
 {
     WebDriverHelper driverHelper = new WebDriverHelper(Base.driver);
+   
+    /**
+     * Author: Kiruthik Vijey Raj P
+     * This method performs a series of actions to click on the "Request" button on the appointments page.
+     * It waits for the element to be clickable, verifies the current URL, clicks the element, and logs the action.
+     *
+     * @param test The ExtentTest object used for logging test information.
+     */
+ 
     public  void clickOnRequest(ExtentTest test)
     {
         driverHelper.waitForClickability(AppointmentsLocators.Appointments_Request,5);
@@ -20,6 +29,5 @@ public class AppointmentsActions
         LoggerHandler.createLogInfo("Clicked on schedule now");
        
     }
-
-
 }
+ 

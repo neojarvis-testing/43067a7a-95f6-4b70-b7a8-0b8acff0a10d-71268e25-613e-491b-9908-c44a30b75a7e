@@ -256,7 +256,7 @@ public class WebDriverHelper {
             LoggerHandler.createLogInfo("Verified The Title");
         } catch (AssertionError e) {
             e.printStackTrace();
-            LoggerHandler.createLogInfo("Title Mismatch");
+            LoggerHandler.createLogInfo("Title Mismatch" + e.getMessage());
         }
  
     }
