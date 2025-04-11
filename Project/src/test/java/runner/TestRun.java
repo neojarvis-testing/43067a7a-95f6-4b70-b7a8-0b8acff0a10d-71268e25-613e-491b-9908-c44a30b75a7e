@@ -32,8 +32,8 @@ public class TestRun extends Base {
     test = reports.createTest("Sheet1");
     HomePageAction action = new HomePageAction();
     action.wrappingMethod();
-  
   }
+  
 
   @AfterMethod
   public void quitBrowser() {
@@ -44,5 +44,4 @@ public class TestRun extends Base {
   public void reportflush() {
     reports.flush();
   }
-
 }
