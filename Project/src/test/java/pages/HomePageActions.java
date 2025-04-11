@@ -3,6 +3,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import uistore.HomePageLocators;
+import uistore.NeedHelpLocators;
 import utils.Base;
 import utils.ReportHelper;
 import utils.Screenshot;
@@ -22,12 +23,31 @@ public class HomePageActions {
         test.log(Status.INFO, "Clicked on Request an Appointment");
     }
   
-   public void healthLibrary(){
-        driverHelper.clickTheElement(HomePageLocators.healthLibrary);
-    }
-    public void institute(){
-        driverHelper.clickTheElement(HomePageLocators.institueAndDepat);
-    }
+  /**
+ * Author: Vignesh
+ * Clicks on the 'Health Library' section to navigate to the health library page.
+ */
+public void healthLibrary() {
+    driverHelper.clickTheElement(HomePageLocators.healthLibrary);
+}
+
+/**
+ * Author: Vignesh
+ * Clicks on the 'Institute and Departments' section to navigate to the relevant page.
+ */
+public void institute() {
+    driverHelper.clickTheElement(HomePageLocators.institueAndDepat);
+}
+
+/**
+ * Author: Vignesh
+ Clicks on the 'need help' section to navigate to the relevant page.
+ */
+public void clickNeedHelp() {
+    driverHelper.waitForClickability(NeedHelpLocators.needHelp, 3);
+    driverHelper.hover(NeedHelpLocators.needHelp);
+    driverHelper.clickTheElement(NeedHelpLocators.needHelp);
+}
   
   public void searchOperation() throws Exception
 {

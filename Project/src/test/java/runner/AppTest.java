@@ -11,7 +11,7 @@ import com.aventstack.extentreports.ExtentTest;
 
 import pages.BSOActions;
 import pages.BloodManageActions;
-
+import pages.ContactActions;
 import pages.HealthLibraryActions;
 import pages.HomePageActions;
 import pages.InstituteActions;
@@ -54,9 +54,14 @@ public class AppTest extends Base{
         institute.pharmacyAction();
         PharmacyActions pharmacy=new PharmacyActions();
         pharmacy.takeSurvey(test);
-        institute.contactAction(test);
-        
-
+        ContactActions contactActions=new ContactActions();
+        contactActions.clickContact();
+        contactActions.viewPhoneDirect();
+        contactActions.clickClevelanHome();
+        homePageActions.clickNeedHelp();
+        contactActions.verifyParking(test);
+        contactActions.tillVirtualSecond();
+        contactActions.getScreenshot(test);
     }
    
     @AfterMethod

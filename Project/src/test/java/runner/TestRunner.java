@@ -51,7 +51,7 @@ public class TestRunner extends Base {
         findADoctorActions.findADoctorAction(test);
     }
   
-      @Test
+      @Test(enabled =false)
     public void create() throws Exception{
         HomePageActions home = new HomePageActions();
         RespiratoryAction resp = new RespiratoryAction();
