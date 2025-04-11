@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
  
 /**
+ * Author: Vignesh
  * LoggerHandler is a utility class for logging informational and error messages.
  * It also provides methods to log messages along with attribute text retrieved
  * from a web element in Selenium WebDriver.

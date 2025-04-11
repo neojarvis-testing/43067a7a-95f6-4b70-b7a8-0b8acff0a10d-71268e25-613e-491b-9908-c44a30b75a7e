@@ -1,7 +1,5 @@
 package pages;
 
-
-
 import uistore.HealthLibraryLocators;
 import utils.Base;
 import utils.WebDriverHelper;
