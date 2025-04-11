@@ -20,14 +20,11 @@ public class LoggerHandler {
         try {
             String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
             String logFileName = String.format("logs/logfile_%s.log", timestamp);
-            String logFileName1 = "logs/logfile.log";
             PatternLayout layout = new PatternLayout("%d{ISO8601} %-5p %c - %m%n");
  
             FileAppender timestampedAppender = createFileAppender(logFileName, layout);
-            FileAppender defaultAppender = createFileAppender(logFileName1, layout);
  
             logger.addAppender(timestampedAppender);
-            logger.addAppender(defaultAppender);
         } catch (Exception e) {
             logger.error("Failed to initialize logger file appender", e);
         }
@@ -68,3 +65,4 @@ public class LoggerHandler {
         logger.fatal(message);
     }
 }
+ 
