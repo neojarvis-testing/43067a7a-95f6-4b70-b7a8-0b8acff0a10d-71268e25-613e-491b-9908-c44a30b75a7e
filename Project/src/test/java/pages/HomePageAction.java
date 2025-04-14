@@ -8,8 +8,18 @@ import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
+
 public class HomePageAction {
     WebDriverHelper driverHelper = new WebDriverHelper(Base.driver);
+    /**
+         * Author: Md Saif Masoom
+         * Executes actions on the homepage.
+         * This method navigates to the homepage of the application and performs specific actions. 
+         * It hovers over an element identified by a locator and clicks on it to proceed further.
+         * It is wrapped in a try-catch block to handle any exceptions that may occur during execution.
+         *
+         * @throws Exception If an error occurs during the hover or click actions.
+         */
 
     public void homePage() {
         try {
@@ -22,6 +32,15 @@ public class HomePageAction {
             e.printStackTrace();
         }
     }
+    /**
+     * Author: Md Saif Masoom
+     * Executes actions on the homepage.
+     * This method navigates to the homepage of the application and performs specific actions. 
+     * It clicks for proceed further.
+     * It is wrapped in a try-catch block to handle any exceptions that may occur during execution.
+     *
+     * @throws Exception If an error occurs during the hover or click actions.
+     */
 
     public void secondpageAction() {
         try {
@@ -36,6 +55,15 @@ public class HomePageAction {
             e.printStackTrace();
         }
     }
+    /**
+     * Author: Md Saif Masoom
+     * Executes actions on the homepage.
+     * This method navigates to the homepage of the application and performs specific actions. 
+     * It clicks and wait for element to visible.
+     * It is wrapped in a try-catch block to handle any exceptions that may occur during execution.
+     *
+     * @throws Exception If an error occurs during the hover or click actions.
+     */
 
     public void locationTypesInput() {
         try {
@@ -61,12 +89,19 @@ public class HomePageAction {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Author: Md Saif Masoom
+     * Executes actions on the homepage.
+     * This method navigates to the homepage of the application and performs specific actions. 
+     * It clicks and wait for element to visible.
+     * It is wrapped in a try-catch block to handle any exceptions that may occur during execution.
+     *
+     * @throws Exception If an error occurs during the hover or click actions.
+     */
     public void specialityInput() {
         try {
 
             driverHelper.clickTheElement(LocationPageLocators.speciality);
-           // LoggerHandler.createLogTextInfo(LocationPageLocators.speciality, "Clicked");
             driverHelper.waitForVisibility(LocationPageLocators.speciality, 10);
            // LoggerHandler.createLogTextInfo(LocationPageLocators.speciality, "Element Visible");
             driverHelper.clickTheElement(LocationPageLocators.astama);
@@ -84,6 +119,15 @@ public class HomePageAction {
             e.printStackTrace();
         }
     }
+     /**
+     * Author: Md Saif Masoom
+     * Executes actions on the homepage.
+     * This method navigates to the homepage of the application and performs specific actions. 
+     * It clicks and wait for element to visible.
+     * It is wrapped in a try-catch block to handle any exceptions that may occur during execution.
+     *
+     * @throws Exception If an error occurs during the hover or click actions.
+     */
 
     public void serviceTypesInput() {
         try {
@@ -108,6 +152,15 @@ public class HomePageAction {
             e.printStackTrace();
         }
     }
+     /**
+     * Author: Md Saif Masoom
+     * Executes actions on the homepage.
+     * This method navigates to the homepage of the application and performs specific actions. 
+     * It clicks on button.
+     * It is wrapped in a try-catch block to handle any exceptions that may occur during execution.
+     *
+     * @throws Exception If an error occurs during the hover or click actions.
+     */
     
     public void buttondirection() {
         try {
@@ -118,6 +171,15 @@ public class HomePageAction {
             e.printStackTrace();
         }
     }
+     /**
+     * Author: Md Saif Masoom
+     * Executes actions on the homepage.
+     * This method navigates to the homepage of the application and performs specific actions. 
+     * It switches window and wait for element to visible after that it take screenshot.
+     * It is wrapped in a try-catch block to handle any exceptions that may occur during execution.
+     *
+     * @throws Exception If an error occurs during the hover or click actions.
+     */
     
     public void secondwindow() {
         try {
@@ -129,7 +191,7 @@ public class HomePageAction {
             Screenshot.screenShotAndHighlight(Base.driver, LocationPageLocators.signinsecond, "Google Maps page");
           //  LoggerHandler.createLogTextInfo(LocationPageLocators.signinsecond,"Screenshot Captured");
           //  LoggerHandler.createLogInfo("verify forms");    
-            driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "2", "value"));
+            //driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "2", "value"));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -28,11 +28,14 @@ public class RequestAppointmentActions
     public void clickOnMe(ExtentTest test)
     {
         driverHelper.waitForClickability(RequestAppointmentLocators.RequestAppointment_Me, 10);
+        Screenshot.screenShotAndHighlight(Base.driver,RequestAppointmentLocators.RequestAppointment_Me,"Me Button");
         driverHelper.hoverAndClick(RequestAppointmentLocators.RequestAppointment_Me);
         test.log(Status.INFO, "Clicked on Me Option ");
     }
     public void clickOnNot_Sure(ExtentTest test)
     {
+        Screenshot.screenShotAndHighlight(Base.driver,RequestAppointmentLocators.RequestAppointment_Not_Sure,"Not Button");
+        driverHelper.waitForClickability(RequestAppointmentLocators.RequestAppointment_Not_Sure, 10);
         driverHelper.clickTheElement(RequestAppointmentLocators.RequestAppointment_Not_Sure);
         test.log(Status.INFO, "Clicked on Not sure Option");
     }

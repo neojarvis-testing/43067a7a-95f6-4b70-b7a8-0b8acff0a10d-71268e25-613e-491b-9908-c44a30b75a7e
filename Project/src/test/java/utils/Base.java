@@ -21,6 +21,10 @@ public class Base {
     public static WebDriver driver;
     public static FileInputStream file;
     public static Properties prop;
+    /**
+ * Base class to initialize WebDriver and load properties.
+ * Author: Harshit Tomar
+ */
  
     public void loadProperties() throws IOException {
         String propertiesPath = System.getProperty("user.dir") + "/config/browser.properties";
@@ -34,6 +38,12 @@ public class Base {
  
         }
     }
+    /**
+     * Author : Harshit Tomar
+     * Opens a browser based on the properties file configuration.
+     * Initializes the WebDriver and sets up browser options.
+     *     
+     */
  
     public void openBrowser() {
  

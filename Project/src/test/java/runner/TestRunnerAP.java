@@ -6,7 +6,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.RespiratoryAction;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import pages.AppointmentsActions;
@@ -22,10 +21,11 @@ import pages.HomePageActions;
 import pages.InstituteActions;
 import pages.PharmacyActions;
 import pages.RequestAppointmentActions;
+import pages.RespiratoryAction;
 import utils.Base;
 import utils.ReportHelper;
 
-public class TestRunner extends Base {
+public class TestRunnerAP extends Base {
     ExtentTest test ;
     ExtentReports reports;
     @BeforeClass
@@ -39,14 +39,14 @@ public class TestRunner extends Base {
         
     }
     //saif
-    @Test(priority = 1, enabled = true)
-    public void initializationtask() {
-    test = reports.createTest("Sheet1");
+    @Test(priority = 5, enabled = true)
+    public void initializationTask() {
+    test = reports.createTest("Test Case 02-HomePage Map");
     HomePageAction action = new HomePageAction();
     action.wrappingMethod();
     }
     //harshit
-    @Test(priority = 2, enabled = true)
+    @Test(priority = 4, enabled = true)
     public void socialsVerification() {
         test = reports.createTest("TestCase 07");
         HomePageActions homePageActions = new HomePageActions();
@@ -62,38 +62,38 @@ public class TestRunner extends Base {
         homePageActions.verifyActionsFooter(test);
     }
     //kiruthik
-    @Test(priority = 4, enabled = true)
+    @Test(priority = 1, enabled = true)
     public void testcase1()
     {
         HomePageActions homePageActions = new HomePageActions();
         AppointmentsActions appointmentsActions = new AppointmentsActions();
         RequestAppointmentActions requestAppointmentActions = new RequestAppointmentActions();
-        test = reports.createTest("Testcase 1");
+        test = reports.createTest("Testcase 3");
         homePageActions.clickOnSchedule(test);
         appointmentsActions.clickOnRequest(test);
         requestAppointmentActions.requestAppointmentAction(test);
     }
     //kiruthik
-    @Test(priority = 5, enabled = true)
+    @Test(priority = 2, enabled = true)
     public void testcase2()
     {
         HomePageActions homePageActions = new HomePageActions();
         FindADoctorActions findADoctorActions = new FindADoctorActions();
-        test = reports.createTest("Testcase 2");
+        test = reports.createTest("Testcase 4");
         homePageActions.clickOnFindADoctor(test);
         findADoctorActions.findADoctorAction(test);
     }
     //rewa
     @Test(priority = 6,enabled = true)
     public void healthLibrary (){
-        test=reports.createTest("Test Case 05 [HealthLibrary]");
+        test=reports.createTest("Test Case 05-HealthLibrary");
         HealthLibraryAction libraryAction = new HealthLibraryAction();
         libraryAction.allHealthLibraryMethods(test);
     }
     //rewa
     @Test(priority = 7,enabled = true)
     public void forProvider(){
-        test=reports.createTest("Test Case 06 [ForProviders]");
+        test=reports.createTest("Test Case 06-ForProviders");
           ForProviders providers = new ForProviders();
           providers.allProvidersMethod(test);
     }
