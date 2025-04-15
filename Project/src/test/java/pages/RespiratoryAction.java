@@ -1,18 +1,27 @@
 package pages;
 
+
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import uistore.RespiratoryLocators;
 import utils.Base;
-
+import utils.ReportHelper;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class RespiratoryAction {
     WebDriverHelper help = new WebDriverHelper(Base.driver);
 
+    /**
+     * Author: Vinny Claret A
+     * This method navigates through the respiratory section, clicks on Introduction
+     * and Cough, verifies the titles, and logs actions.
+     *
+     * @param test The ExtentTest object used for logging test information.
+     */
     public void respOperation(ExtentTest test) {
+        try{
         help.hoverAndClick(RespiratoryLocators.Introduction);
         test.log(Status.PASS, "Clicked on Introduction");
 
@@ -24,8 +33,21 @@ public class RespiratoryAction {
         help.verifyTitle(cough);
 
     }
+    catch (Exception e) {
+        test.log(Status.FAIL, e.getMessage());
+        ReportHelper.attachScreenshotToReport("Respiratory operation", test, "Respiratory Not Clicked");
+    }
+}
 
+    /**
+     * Author: Vinny Claret A
+     * This method navigates back to the doctors section, applies filters, verifies
+     * the title, and logs actions.
+     *
+     * @param test The ExtentTest object used for logging test information.
+     */
     public void doctorFilters(ExtentTest test) {
+       try{
         Base.driver.navigate().back();
         Base.driver.navigate().back();
         Base.driver.navigate().back();
@@ -42,8 +64,21 @@ public class RespiratoryAction {
         help.verifyTitle(title);
         help.waitForClickability(RespiratoryLocators.mahamod, 2);
     }
+    catch (Exception e) {
+        test.log(Status.FAIL, e.getMessage());
+        ReportHelper.attachScreenshotToReport("Doctor filter", test, "Doctor filter not done");
+    }
+}
 
+    /**
+     * Author: Vinny Claret A
+     * This method selects a doctor, switches the window, verifies the URL,
+     * retrieves doctor information, and captures a screenshot.
+     *
+     * @param test The ExtentTest object used for logging test information.
+     */
     public void doctorSelect(ExtentTest test) {
+       try{
         help.hoverAndClick(RespiratoryLocators.mahamod);
         test.log(Status.PASS, "Doctors Mamoun Abdoh, MD is selected");
 
@@ -55,6 +90,11 @@ public class RespiratoryAction {
         test.log(Status.PASS, "Doctor profile screenshot is captured");
 
     }
+    catch (Exception e) {
+        test.log(Status.FAIL, e.getMessage());
+        ReportHelper.attachScreenshotToReport("Doctor selection", test, "Doctor not selected");
+    }
+}
 
     public void respiratoryAll(ExtentTest test) {
         respOperation(test);

@@ -82,6 +82,7 @@ public class HomePageActions {
      * @throws Exception If an error occurs during the search operation.
      */
     public void searchOperation(ExtentTest test) {
+        try{
         driverHelper.clickTheElement(HomePageLocators.search);
         test.log(Status.PASS, "Clicked on Searchbar as expected");
         driverHelper.clickTheElement(HomePageLocators.searchbar);
@@ -97,6 +98,11 @@ public class HomePageActions {
         driverHelper.clickTheElement(HomePageLocators.firstResp);
         driverHelper.retrieveText(HomePageLocators.verifyResp);
     }
+    catch (Exception e) {
+        test.log(Status.FAIL, e.getMessage());
+        ReportHelper.attachScreenshotToReport("Search operation", test, "Search operation not done");
+    }
+}
 
     /**
      * Author: Vinny Claret. A
