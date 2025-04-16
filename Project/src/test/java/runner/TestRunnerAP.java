@@ -109,8 +109,8 @@ public class TestRunnerAP extends Base {
         test = reports.createTest("Test Case 01 - Respiratory Operation");
         HomePageActions home = new HomePageActions();
         RespiratoryAction resp = new RespiratoryAction();
-        home.searchAll();
-        resp.respiratoryAll();
+        home.searchAll(test);
+        resp.respiratoryAll(test);
      }
      //vignesh
       @Test(priority = 9,enabled = true)
