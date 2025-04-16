@@ -55,10 +55,10 @@ public class HomePageAction {
         try {
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
             driverHelper.clickTheElement(LocationPageLocators.searchbar);
-            test.log(Status.PASS, "Clicked on search bar as expected");
-            String data = ExcelReader.readCellValue("Sheet1", "1", "value");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.searchbar,"Clicked");
+            String data = ExcelReader.readCellValue("Sheet4", "1", "value");
             driverHelper.typeText(LocationPageLocators.searchbar, data);
-            test.log(Status.PASS, "Sent data on search bar as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.searchbar, "Sent Text");
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         } catch (Exception e) {
             e.printStackTrace();
@@ -81,14 +81,24 @@ public class HomePageAction {
         try {
 
             driverHelper.clickTheElement(LocationPageLocators.locationTypes);
-            test.log(Status.PASS, "Clicked on location types as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.locationTypes,
+            // "Clicked");
             driverHelper.waitForVisibility(LocationPageLocators.locationTypes, 10);
-            test.log(Status.PASS, "Waited for visibility as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.locationTypes, "Element
+            // visible");
             driverHelper.clickTheElement(LocationPageLocators.healthCentre);
-            test.log(Status.PASS, "Clicked on health centre as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.healthCentre,
+            // "Clicked");
+            // Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
             Thread.sleep(3000);
             driverHelper.selectByValue(LocationPageLocators.locationtypes1, "Imaging & Radiology");
-            test.log(Status.PASS, "Selected value as expected");
+            // LoggerHandler.createLogInfo("Element Selected");
+            // driverHelper.waitForVisibility(LocationPageLocators.locationtypes1, 10);
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.locationtypes1, "Element
+            // Visible");
+            // driverHelper.clickTheElement(LocationPageLocators.imagingradiology);
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.locationtypes1,
+            // "Click");
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 
         } catch (Exception e) {
@@ -111,18 +121,20 @@ public class HomePageAction {
         try {
 
             driverHelper.clickTheElement(LocationPageLocators.speciality);
-            test.log(Status.PASS, "Clicked on speciality as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.speciality, "Clicked");
             driverHelper.waitForVisibility(LocationPageLocators.speciality, 10);
-            test.log(Status.PASS, "Waited for visibility as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.speciality, "Element
+            // Visible");
             driverHelper.clickTheElement(LocationPageLocators.astama);
-            test.log(Status.PASS, "Clicked on astama as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.speciality1, "Clicked");
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
             driverHelper.waitForVisibility(LocationPageLocators.speciality1, 10);
-            test.log(Status.PASS, "Element visible as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.speciality1, "Element
+            // Visible");
             driverHelper.clickTheElement(LocationPageLocators.speciality1);
-            test.log(Status.PASS, "Clicked on speciality1 as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.speciality1, "Clicked");
             driverHelper.clickTheElement(LocationPageLocators.brainhealth);
-            test.log(Status.PASS, "Clicked on brain health as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.brainhealth, "Clicked");
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         } catch (Exception e) {
             e.printStackTrace();
@@ -145,58 +157,39 @@ public class HomePageAction {
         try {
 
             driverHelper.clickTheElement(LocationPageLocators.serviceTypes);
-            test.log(Status.PASS, "Clicked on service type as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.serviceTypes,
+            // "Clicked");
             driverHelper.waitForVisibility(LocationPageLocators.serviceTypes, 10);
-            test.log(Status.PASS, "Element visible as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.serviceTypes, "Element
+            // Visible");
+
             driverHelper.clickTheElement(LocationPageLocators.emergency);
-            test.log(Status.PASS, "Clicked on emergency as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.emergency, "Clicked");
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+
             driverHelper.waitForVisibility(LocationPageLocators.serviceTypes1, 10);
-            test.log(Status.PASS, "Element visible as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.serviceTypes1, "Element
+            // Visible");
             driverHelper.clickTheElement(LocationPageLocators.serviceTypes1);
-            test.log(Status.PASS, "Clicked on service types as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.serviceTypes1,
+            // "Clicked");
             driverHelper.clickTheElement(LocationPageLocators.expresscare);
-            test.log(Status.PASS, "Clicked on expresscare as expected");
+            // LoggerHandler.createLogTextError(LocationPageLocators.expresscare,"Clicked");
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    /**
-     * Author: Md Saif Masoom
-     * Executes actions on the homepage.
-     * This method navigates to the homepage of the application and performs
-     * specific actions.
-     * It clicks on button.
-     * It is wrapped in a try-catch block to handle any exceptions that may occur
-     * during execution.
-     *
-     * @throws Exception If an error occurs during the hover or click actions.
-     */
 
     public void buttondirection(ExtentTest test) {
         try {
             driverHelper.clickTheElement(LocationPageLocators.DirectionButton);
-            test.log(Status.PASS, "Clicked on direction buttton as expected");
+            // LoggerHandler.createLogTextError(LocationPageLocators.DirectionButton,"Clicked");
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    /**
-     * Author: Md Saif Masoom
-     * Executes actions on the homepage.
-     * This method navigates to the homepage of the application and performs
-     * specific actions.
-     * It switches window and wait for element to visible after that it take
-     * screenshot.
-     * It is wrapped in a try-catch block to handle any exceptions that may occur
-     * during execution.
-     *
-     * @throws Exception If an error occurs during the hover or click actions.
-     */
 
     public void secondwindow(ExtentTest test) {
         try {
@@ -204,10 +197,13 @@ public class HomePageAction {
             driverHelper.switchWindow();
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
             driverHelper.waitForVisibility(LocationPageLocators.signinsecond, 5);
-            driverHelper.verifyUrl(Base.prop.getProperty("mapurl"));
-            test.log(Status.PASS, "Element visible as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.signinsecond,"Element
+            // Visible");
             Screenshot.screenShotAndHighlight(Base.driver, LocationPageLocators.signinsecond, "Google Maps page");
-            test.log(Status.PASS, "Screenshot captured as expected");
+            // LoggerHandler.createLogTextInfo(LocationPageLocators.signinsecond,"Screenshot
+            // Captured");
+            // LoggerHandler.createLogInfo("verify forms");
+            driverHelper.verifyUrl(ExcelReader.readCellValue("Sheet1", "2", "value"));
         } catch (Exception e) {
             e.printStackTrace();
         }

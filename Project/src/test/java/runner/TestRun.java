@@ -33,11 +33,10 @@ public class TestRun extends Base {
     HomePageAction action = new HomePageAction();
     action.wrappingMethod(test);
   }
-  
 
   @AfterMethod
   public void quitBrowser() {
-     driver.quit();
+    driver.quit();
   }
 
   @AfterClass

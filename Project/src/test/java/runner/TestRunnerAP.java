@@ -1,6 +1,5 @@
 package runner;
 
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -26,44 +25,49 @@ import utils.Base;
 import utils.ReportHelper;
 
 public class TestRunnerAP extends Base {
-    ExtentTest test ;
+    ExtentTest test;
     ExtentReports reports;
+
     @BeforeClass
-    public void createReport()
-    {
+    public void createReport() {
         reports = ReportHelper.createExtentReporter("cleveland_Report");
     }
+
     @BeforeMethod
     public void configBrowser() {
         openBrowser();
-        
+
     }
-    //saif
+
+    // saif
     @Test(priority = 5, enabled = true)
     public void initializationTask() {
     test = reports.createTest("Test Case 02-HomePage Map");
     HomePageAction action = new HomePageAction();
     action.wrappingMethod(test);
     }
-    //harshit
+
+    // harshit
     @Test(priority = 4, enabled = true)
     public void socialsVerification() {
         test = reports.createTest("Test Case 07- HomePage");
         HomePageActions homePageActions = new HomePageActions();
-       homePageActions.verifySocialLinks(test);
-        
+        homePageActions.verifySocialLinks(test);
+
     }
-    //harshit
-     @Test( priority = 3,enabled = true)
+
+    // harshit
+    @Test(priority = 3, enabled = true)
     public void ActionsVerification() {
-        test = reports.createTest("Test Case 08-Home page functionality");
-       HomePageActions homePageActions = new HomePageActions();
+        test = reports.createTest("TestCase 08");
+        HomePageActions homePageActions = new HomePageActions();
+
         homePageActions.verifyActionsFooter(test);
     }
-    //kiruthik
+
+    // kiruthik
     @Test(priority = 1, enabled = true)
-    public void testcase1()
-    {
+    public void testcase1() {
         HomePageActions homePageActions = new HomePageActions();
         AppointmentsActions appointmentsActions = new AppointmentsActions();
         RequestAppointmentActions requestAppointmentActions = new RequestAppointmentActions();
@@ -72,34 +76,37 @@ public class TestRunnerAP extends Base {
         appointmentsActions.clickOnRequest(test);
         requestAppointmentActions.requestAppointmentAction(test);
     }
-    //kiruthik
+
+    // kiruthik
     @Test(priority = 2, enabled = true)
-    public void testcase2()
-    {
+    public void testcase2() {
         HomePageActions homePageActions = new HomePageActions();
         FindADoctorActions findADoctorActions = new FindADoctorActions();
         test = reports.createTest("Test Case 04-Find a Doctors");
         homePageActions.clickOnFindADoctor(test);
         findADoctorActions.findADoctorAction(test);
     }
-    //rewa
-    @Test(priority = 6,enabled = true)
-    public void healthLibrary (){
-        test=reports.createTest("Test Case 05-HealthLibrary");
+
+    // rewa
+    @Test(priority = 6, enabled = true)
+    public void healthLibrary() {
+        test = reports.createTest("Test Case 05 [HealthLibrary]");
         HealthLibraryAction libraryAction = new HealthLibraryAction();
         libraryAction.allHealthLibraryMethods(test);
     }
-    //rewa
-    @Test(priority = 7,enabled = true)
-    public void forProvider(){
-        test=reports.createTest("Test Case 06-ForProviders");
-          ForProviders providers = new ForProviders();
-          providers.allProvidersMethod(test);
+
+    // rewa
+    @Test(priority = 7, enabled = true)
+    public void forProvider() {
+        test = reports.createTest("Test Case 06 [ForProviders]");
+        ForProviders providers = new ForProviders();
+        providers.allProvidersMethod(test);
     }
-    //vinny
+
+    // vinny
     @Test(priority = 8, enabled = true)
-    public void create()  {
-        test=reports.createTest("Test Case 01-Respiratory");
+    public void create() {
+        test = reports.createTest("Test Case 01 - Respiratory Operation");
         HomePageActions home = new HomePageActions();
         RespiratoryAction resp = new RespiratoryAction();
         home.searchAll(test);
@@ -111,11 +118,11 @@ public class TestRunnerAP extends Base {
        
         HomePageActions homePageActions =new HomePageActions();
         homePageActions.healthLibrary();
-        HealthLibraryActions healthLibraryActions=new HealthLibraryActions();
+        HealthLibraryActions healthLibraryActions = new HealthLibraryActions();
         healthLibraryActions.clickOnEyes();
-        BSOActions bso =new BSOActions();
+        BSOActions bso = new BSOActions();
         bso.eyeDiseases();
-       
+
     }
     //vignesh
     @Test(priority = 10,enabled = true)
@@ -141,14 +148,13 @@ public class TestRunnerAP extends Base {
         contactActions.getScreenshot(test);
     }
 
-
     @AfterMethod
     public void closeBrowser() {
         driver.quit();
     }
+
     @AfterClass
-    public void flushReport()
-    {
+    public void flushReport() {
         reports.flush();
     }
 
