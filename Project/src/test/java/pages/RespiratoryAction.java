@@ -5,7 +5,7 @@ import com.aventstack.extentreports.Status;
 
 import uistore.RespiratoryLocators;
 import utils.Base;
-
+import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
@@ -14,10 +14,14 @@ public class RespiratoryAction {
 public void respOperation(ExtentTest test) 
 {
    help.hoverAndClick(RespiratoryLocators.Introduction);
-   test.log(Status.PASS, "Clicked on introduction as expected");
-    help.hoverAndClick(RespiratoryLocators.cough);
-    test.log(Status.PASS, "Clicked on cough as expected");
-
+   //test.log(Status.PASS, "Clicked on Introduction");
+   
+   String intro = Base.driver.getTitle();
+   help.verifyTitle(intro);
+   help.hoverAndClick(RespiratoryLocators.cough);
+  // test.log(Status.PASS, "Clicked on Cough");
+   String cough = Base.driver.getTitle();
+    help.verifyTitle(cough);
 
 
 }
@@ -27,7 +31,8 @@ public void doctorFilters( ExtentTest test)
     Base.driver.navigate().back();
    
     help.hoverAndClick(RespiratoryLocators.byDoctors);
-    test.log(Status.PASS, "Clicked on filter byDoctors as expected");
+    //test.log(Status.PASS, "Clicked on Doctors");
+    
     help.hoverAndClick(RespiratoryLocators.specialist);
     test.log(Status.PASS, "Clicked on specialist as expected");
     help.hoverAndClick(RespiratoryLocators.male);
@@ -37,10 +42,13 @@ public void doctorFilters( ExtentTest test)
 public void doctorSelect(ExtentTest test)
 {
     help.hoverAndClick(RespiratoryLocators.mahamod);
+   // test.log(Status.PASS, "Doctors Mamoun Abdoh, MD is selected");
+   
     help.switchWindow();
     help.retrieveText(RespiratoryLocators.doctorInfo);
     Screenshot.screenShotAndHighlight(Base.driver,RespiratoryLocators.doctorInfo,"Doctor's profile");
-    test.log(Status.PASS, "Doctor profile captured");
+    //test.log(Status.PASS, "Doctor profile screenshot is captured");
+    
 }
 public void respiratoryAll(ExtentTest test) 
 {

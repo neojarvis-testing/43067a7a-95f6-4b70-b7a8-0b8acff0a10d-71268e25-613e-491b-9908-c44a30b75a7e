@@ -107,8 +107,8 @@ public class TestRunnerAP extends Base {
      }
      //vignesh
       @Test(priority = 9,enabled = true)
-    public void FirstTestCase()throws InterruptedException{
-       test=reports.createTest("Test Case 10-Social media");
+    public void FirstTestCase(){
+       
         HomePageActions homePageActions =new HomePageActions();
         homePageActions.healthLibrary();
         HealthLibraryActions healthLibraryActions=new HealthLibraryActions();
@@ -119,25 +119,25 @@ public class TestRunnerAP extends Base {
     }
     //vignesh
     @Test(priority = 10,enabled = true)
-    public void testCaseTwo() throws InterruptedException{
+    public void testCaseTwo() {
        
         test=reports.createTest("Test Case 09-Services");        
         HomePageActions homePageActions =new HomePageActions();
-        homePageActions.institute();
+        homePageActions.institute(test);
         InstituteActions institute=new InstituteActions();
-        institute.bloodacction();
+        institute.bloodacction(test);
         BloodManageActions bloodMangement=new BloodManageActions();
         bloodMangement.bloodMethod();
-        institute.pharmacyAction();
+        institute.pharmacyAction(test);
         PharmacyActions pharmacy=new PharmacyActions();
         pharmacy.takeSurvey(test);
         ContactActions contactActions=new ContactActions();
-        contactActions.clickContact();
-        contactActions.viewPhoneDirect();
-        contactActions.clickClevelanHome();
-        homePageActions.clickNeedHelp();
+        contactActions.clickContact(test);
+        contactActions.viewPhoneDirect(test);
+        contactActions.clickClevelanHome(test);
+        homePageActions.clickNeedHelp(test);
         contactActions.verifyParking(test);
-        contactActions.tillVirtualSecond();
+        contactActions.tillVirtualSecond(test);
         contactActions.getScreenshot(test);
     }
 

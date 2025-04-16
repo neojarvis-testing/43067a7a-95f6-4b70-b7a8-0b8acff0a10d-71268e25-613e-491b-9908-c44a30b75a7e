@@ -57,18 +57,20 @@ public class HomePageActions {
      * Author: Vignesh
      * Clicks on the 'Institute and Departments' section to navigate to the relevant page.
      */
-    public void institute() {
+    public void institute(ExtentTest test) {
         driverHelper.clickTheElement(HomePageLocators.institueAndDepat);
+        test.log(Status.INFO,"Clicked on Institute And Department");
     }
     
     /**
      * Author: Vignesh
      Clicks on the 'need help' section to navigate to the relevant page.
     */
-    public void clickNeedHelp() {
+    public void clickNeedHelp(ExtentTest test) {
         driverHelper.waitForClickability(NeedHelpLocators.needHelp, 3);
         driverHelper.hover(NeedHelpLocators.needHelp);
         driverHelper.clickTheElement(NeedHelpLocators.needHelp);
+        test.log(Status.INFO,"Clicked on needhelp");
     }
    
    
