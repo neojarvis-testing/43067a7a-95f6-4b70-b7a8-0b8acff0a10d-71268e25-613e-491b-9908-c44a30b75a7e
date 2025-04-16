@@ -16,7 +16,7 @@ import java.util.Set;
  
 /**
  * Utility class to provide helper methods for WebDriver actions.
- * Author: Kiruthik Vijey Raj P
+ * Author: Kiruthik Vijey Raj P`
  */
 public class WebDriverHelper {
     private WebDriver driver;

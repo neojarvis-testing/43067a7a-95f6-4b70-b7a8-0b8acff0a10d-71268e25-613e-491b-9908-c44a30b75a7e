@@ -109,15 +109,14 @@ public class TestRunnerAP extends Base {
         test = reports.createTest("Test Case 01 - Respiratory Operation");
         HomePageActions home = new HomePageActions();
         RespiratoryAction resp = new RespiratoryAction();
-        home.searchAll(test);
-        resp.respiratoryAll(test);
-    }
-
-    // vignesh
-    @Test(priority = 9, enabled = true)
-    public void FirstTestCase() throws InterruptedException {
-
-        HomePageActions homePageActions = new HomePageActions();
+        home.searchAll();
+        resp.respiratoryAll();
+     }
+     //vignesh
+      @Test(priority = 9,enabled = true)
+    public void FirstTestCase(){
+       
+        HomePageActions homePageActions =new HomePageActions();
         homePageActions.healthLibrary();
         HealthLibraryActions healthLibraryActions = new HealthLibraryActions();
         healthLibraryActions.clickOnEyes();
@@ -125,28 +124,27 @@ public class TestRunnerAP extends Base {
         bso.eyeDiseases();
 
     }
-
-    // vignesh
-    @Test(priority = 10, enabled = true)
-    public void testCaseTwo() throws InterruptedException {
-
-        test = reports.createTest("test");
-        HomePageActions homePageActions = new HomePageActions();
-        homePageActions.institute();
-        InstituteActions institute = new InstituteActions();
-        institute.bloodacction();
-        BloodManageActions bloodMangement = new BloodManageActions();
+    //vignesh
+    @Test(priority = 10,enabled = true)
+    public void testCaseTwo() {
+       
+        test=reports.createTest("test");        
+        HomePageActions homePageActions =new HomePageActions();
+        homePageActions.institute(test);
+        InstituteActions institute=new InstituteActions();
+        institute.bloodacction(test);
+        BloodManageActions bloodMangement=new BloodManageActions();
         bloodMangement.bloodMethod();
-        institute.pharmacyAction();
-        PharmacyActions pharmacy = new PharmacyActions();
+        institute.pharmacyAction(test);
+        PharmacyActions pharmacy=new PharmacyActions();
         pharmacy.takeSurvey(test);
-        ContactActions contactActions = new ContactActions();
-        contactActions.clickContact();
-        contactActions.viewPhoneDirect();
-        contactActions.clickClevelanHome();
-        homePageActions.clickNeedHelp();
+        ContactActions contactActions=new ContactActions();
+        contactActions.clickContact(test);
+        contactActions.viewPhoneDirect(test);
+        contactActions.clickClevelanHome(test);
+        homePageActions.clickNeedHelp(test);
         contactActions.verifyParking(test);
-        contactActions.tillVirtualSecond();
+        contactActions.tillVirtualSecond(test);
         contactActions.getScreenshot(test);
     }
 

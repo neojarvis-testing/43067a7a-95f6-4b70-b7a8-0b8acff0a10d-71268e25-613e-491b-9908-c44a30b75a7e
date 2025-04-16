@@ -1,4 +1,7 @@
 package pages;
+ 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 import uistore.InstituteLocators;
 import utils.Base;
@@ -17,9 +20,10 @@ public class InstituteActions {
      * Author: Vignesh
      * Hovers over the selection element and clicks on 'Blood Management.'
      */
-    public void bloodacction() {
+    public void bloodacction(ExtentTest test) {
         driverHelper.hover(InstituteLocators.specilaSelect);
         driverHelper.clickTheElement(InstituteLocators.bloodManagement);
+        test.log(Status.INFO,"Clicked on BloodMangement");
     }
 
     /**
@@ -27,7 +31,7 @@ public class InstituteActions {
      * Ensures clickability, scrolls, hovers, and clicks on 'Pharmacy,' with form
      * verification logged.
      */
-    public void pharmacyAction() {
+    public void pharmacyAction(ExtentTest test) {
         driverHelper.waitForClickability(InstituteLocators.specilaSelect, 3);
         driverHelper.scrollToElement(InstituteLocators.specilaSelect);
         driverHelper.waitForClickability(InstituteLocators.specilaSelect, 3);
