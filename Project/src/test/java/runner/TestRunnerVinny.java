@@ -34,8 +34,8 @@ public class TestRunnerVinny extends Base {
     public void create()  {
         HomePageActions home = new HomePageActions();
         RespiratoryAction resp = new RespiratoryAction();
-        home.searchAll();
-        resp.respiratoryAll();
+        home.searchAll(test);
+        resp.respiratoryAll(test);
          
      }
  

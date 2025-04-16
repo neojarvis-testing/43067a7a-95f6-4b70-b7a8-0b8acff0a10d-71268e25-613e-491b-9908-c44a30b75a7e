@@ -43,12 +43,12 @@ public class TestRunnerAP extends Base {
     public void initializationTask() {
     test = reports.createTest("Test Case 02-HomePage Map");
     HomePageAction action = new HomePageAction();
-    action.wrappingMethod();
+    action.wrappingMethod(test);
     }
     //harshit
     @Test(priority = 4, enabled = true)
     public void socialsVerification() {
-        test = reports.createTest("TestCase 07");
+        test = reports.createTest("Test Case 07- HomePage");
         HomePageActions homePageActions = new HomePageActions();
        homePageActions.verifySocialLinks(test);
         
@@ -56,9 +56,8 @@ public class TestRunnerAP extends Base {
     //harshit
      @Test( priority = 3,enabled = true)
     public void ActionsVerification() {
-        test = reports.createTest("TestCase 08");
+        test = reports.createTest("Test Case 08-Home page functionality");
        HomePageActions homePageActions = new HomePageActions();
-       
         homePageActions.verifyActionsFooter(test);
     }
     //kiruthik
@@ -68,7 +67,7 @@ public class TestRunnerAP extends Base {
         HomePageActions homePageActions = new HomePageActions();
         AppointmentsActions appointmentsActions = new AppointmentsActions();
         RequestAppointmentActions requestAppointmentActions = new RequestAppointmentActions();
-        test = reports.createTest("Testcase 3");
+        test = reports.createTest("Test Case 03-Appointments");
         homePageActions.clickOnSchedule(test);
         appointmentsActions.clickOnRequest(test);
         requestAppointmentActions.requestAppointmentAction(test);
@@ -79,7 +78,7 @@ public class TestRunnerAP extends Base {
     {
         HomePageActions homePageActions = new HomePageActions();
         FindADoctorActions findADoctorActions = new FindADoctorActions();
-        test = reports.createTest("Testcase 4");
+        test = reports.createTest("Test Case 04-Find a Doctors");
         homePageActions.clickOnFindADoctor(test);
         findADoctorActions.findADoctorAction(test);
     }
@@ -100,15 +99,16 @@ public class TestRunnerAP extends Base {
     //vinny
     @Test(priority = 8, enabled = true)
     public void create()  {
+        test=reports.createTest("Test Case 01-Respiratory");
         HomePageActions home = new HomePageActions();
         RespiratoryAction resp = new RespiratoryAction();
-        home.searchAll();
-        resp.respiratoryAll();
+        home.searchAll(test);
+        resp.respiratoryAll(test);
      }
      //vignesh
       @Test(priority = 9,enabled = true)
     public void FirstTestCase()throws InterruptedException{
-       
+       test=reports.createTest("Test Case 10-Social media");
         HomePageActions homePageActions =new HomePageActions();
         homePageActions.healthLibrary();
         HealthLibraryActions healthLibraryActions=new HealthLibraryActions();
@@ -121,7 +121,7 @@ public class TestRunnerAP extends Base {
     @Test(priority = 10,enabled = true)
     public void testCaseTwo() throws InterruptedException{
        
-        test=reports.createTest("test");        
+        test=reports.createTest("Test Case 09-Services");        
         HomePageActions homePageActions =new HomePageActions();
         homePageActions.institute();
         InstituteActions institute=new InstituteActions();

@@ -1,7 +1,4 @@
 package runner;
-
-import org.openqa.selenium.By;
-import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -12,12 +9,9 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
 import pages.HomePageActions;
-import uistore.HomePageLocators;
 import utils.Base;
 import utils.LoggerHandler;
 import utils.ReportHelper;
-import utils.Screenshot;
-
 public class TestRunnerSL extends Base {
     ExtentTest test;
     ExtentReports reports;
