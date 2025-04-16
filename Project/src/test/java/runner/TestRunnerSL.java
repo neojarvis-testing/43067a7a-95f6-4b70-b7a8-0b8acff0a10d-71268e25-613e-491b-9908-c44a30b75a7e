@@ -1,6 +1,5 @@
 package runner;
 
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -15,7 +14,6 @@ import pages.HomePageActions;
 import utils.Base;
 import utils.LoggerHandler;
 import utils.ReportHelper;
-
 
 public class TestRunnerSL extends Base {
     ExtentTest test;
@@ -32,21 +30,23 @@ public class TestRunnerSL extends Base {
         LoggerHandler.info("driver initialise");
 
     }
-     @Test( enabled = false)
+
+    @Test(enabled = false)
     public void socialsVerification() {
         test = reports.createTest("TestCase 07");
         HomePageActions homePageActions = new HomePageActions();
-       homePageActions.verifySocialLinks(test);
-        
+        homePageActions.verifySocialLinks(test);
+
     }
-     @Test( enabled = false)
+
+    @Test(enabled = false)
     public void ActionsVerification() {
         test = reports.createTest("TestCase 08");
        HomePageActions homePageActions = new HomePageActions();
         homePageActions.verifyActionsFooter(test);
     }
 
-     @AfterMethod
+    @AfterMethod
     public void tearDown() {
        
       
