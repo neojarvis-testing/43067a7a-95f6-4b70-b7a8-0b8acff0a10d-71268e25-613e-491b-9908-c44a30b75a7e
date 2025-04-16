@@ -59,7 +59,7 @@ public class TestRunnerAP extends Base {
     // harshit
     @Test(priority = 3, enabled = true)
     public void ActionsVerification() {
-        test = reports.createTest("TestCase 08");
+        test = reports.createTest("TestCase 08 - ");
         HomePageActions homePageActions = new HomePageActions();
 
         homePageActions.verifyActionsFooter(test);
