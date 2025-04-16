@@ -88,6 +88,7 @@ public class HomePageActions {
         driverHelper.clickTheElement(HomePageLocators.search);
         test.log(Status.PASS, "Clicked on Searchbar as expected");
         driverHelper.clickTheElement(HomePageLocators.searchbar);
+        test.log(Status.PASS, "Clicked on search bar as expected");
         driverHelper.typeText(HomePageLocators.searchbar, "Respiratory");
         test.log(Status.PASS, "Entered on Respiratory as expected");
 
@@ -98,7 +99,9 @@ public class HomePageActions {
         driverHelper.waitForClickability(HomePageLocators.firstResp, 2);
         test.log(Status.PASS, "Clicked on first Respiratory as expected");
         driverHelper.clickTheElement(HomePageLocators.firstResp);
+        test.log(Status.PASS, "Clicked on respiratory as expected");
         driverHelper.retrieveText(HomePageLocators.verifyResp);
+        test.log(Status.PASS, "Respiratory text verified as expected");
     }
     catch (Exception e) {
         test.log(Status.FAIL, e.getMessage());

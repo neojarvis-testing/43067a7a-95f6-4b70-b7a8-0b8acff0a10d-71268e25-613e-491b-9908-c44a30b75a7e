@@ -1,30 +1,57 @@
 package pages;
 
 import java.time.Duration;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import uistore.HomePageLocators;
 import uistore.LocationPageLocators;
 import utils.Base;
 import utils.ExcelReader;
-import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class HomePageAction {
     WebDriverHelper driverHelper = new WebDriverHelper(Base.driver);
 
-    public void homePage() {
+    /**
+     * Author: Md Saif Masoom
+     * Executes actions on the homepage.
+     * This method navigates to the homepage of the application and performs
+     * specific actions.
+     * It hovers over an element identified by a locator and clicks on it to proceed
+     * further.
+     * It is wrapped in a try-catch block to handle any exceptions that may occur
+     * during execution.
+     *
+     * @throws Exception If an error occurs during the hover or click actions.
+     */
+
+    public void homePage(ExtentTest test) {
         try {
 
             driverHelper.hover(HomePageLocators.getDirection);
+            test.log(Status.PASS, "Hovered over get direction as expected");
             driverHelper.clickTheElement(HomePageLocators.getDirection);
-            // LoggerHandler.info("Clicked");
+            test.log(Status.PASS, "Clicked on get direction as expected");
         } catch (Exception e) {
 
             e.printStackTrace();
         }
     }
 
-    public void secondpageAction() {
+    /**
+     * Author: Md Saif Masoom
+     * Executes actions on the homepage.
+     * This method navigates to the homepage of the application and performs
+     * specific actions.
+     * It clicks for proceed further.
+     * It is wrapped in a try-catch block to handle any exceptions that may occur
+     * during execution.
+     *
+     * @throws Exception If an error occurs during the hover or click actions.
+     */
+
+    public void secondpageAction(ExtentTest test) {
         try {
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
             driverHelper.clickTheElement(LocationPageLocators.searchbar);
@@ -38,7 +65,19 @@ public class HomePageAction {
         }
     }
 
-    public void locationTypesInput() {
+    /**
+     * Author: Md Saif Masoom
+     * Executes actions on the homepage.
+     * This method navigates to the homepage of the application and performs
+     * specific actions.
+     * It clicks and wait for element to visible.
+     * It is wrapped in a try-catch block to handle any exceptions that may occur
+     * during execution.
+     *
+     * @throws Exception If an error occurs during the hover or click actions.
+     */
+
+    public void locationTypesInput(ExtentTest test) {
         try {
 
             driverHelper.clickTheElement(LocationPageLocators.locationTypes);
@@ -52,7 +91,6 @@ public class HomePageAction {
             // "Clicked");
             // Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
             Thread.sleep(3000);
-            // driverHelper.clickTheElement(LocationPageLocators.locationtypes1);
             driverHelper.selectByValue(LocationPageLocators.locationtypes1, "Imaging & Radiology");
             // LoggerHandler.createLogInfo("Element Selected");
             // driverHelper.waitForVisibility(LocationPageLocators.locationtypes1, 10);
@@ -68,7 +106,18 @@ public class HomePageAction {
         }
     }
 
-    public void specialityInput() {
+    /**
+     * Author: Md Saif Masoom
+     * Executes actions on the homepage.
+     * This method navigates to the homepage of the application and performs
+     * specific actions.
+     * It clicks and wait for element to visible.
+     * It is wrapped in a try-catch block to handle any exceptions that may occur
+     * during execution.
+     *
+     * @throws Exception If an error occurs during the hover or click actions.
+     */
+    public void specialityInput(ExtentTest test) {
         try {
 
             driverHelper.clickTheElement(LocationPageLocators.speciality);
@@ -79,7 +128,6 @@ public class HomePageAction {
             driverHelper.clickTheElement(LocationPageLocators.astama);
             // LoggerHandler.createLogTextInfo(LocationPageLocators.speciality1, "Clicked");
             Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-
             driverHelper.waitForVisibility(LocationPageLocators.speciality1, 10);
             // LoggerHandler.createLogTextInfo(LocationPageLocators.speciality1, "Element
             // Visible");
@@ -93,7 +141,19 @@ public class HomePageAction {
         }
     }
 
-    public void serviceTypesInput() {
+    /**
+     * Author: Md Saif Masoom
+     * Executes actions on the homepage.
+     * This method navigates to the homepage of the application and performs
+     * specific actions.
+     * It clicks and wait for element to visible.
+     * It is wrapped in a try-catch block to handle any exceptions that may occur
+     * during execution.
+     *
+     * @throws Exception If an error occurs during the hover or click actions.
+     */
+
+    public void serviceTypesInput(ExtentTest test) {
         try {
 
             driverHelper.clickTheElement(LocationPageLocators.serviceTypes);
@@ -121,7 +181,7 @@ public class HomePageAction {
         }
     }
 
-    public void buttondirection() {
+    public void buttondirection(ExtentTest test) {
         try {
             driverHelper.clickTheElement(LocationPageLocators.DirectionButton);
             // LoggerHandler.createLogTextError(LocationPageLocators.DirectionButton,"Clicked");
@@ -131,7 +191,7 @@ public class HomePageAction {
         }
     }
 
-    public void secondwindow() {
+    public void secondwindow(ExtentTest test) {
         try {
 
             driverHelper.switchWindow();
@@ -149,15 +209,15 @@ public class HomePageAction {
         }
     }
 
-    public void wrappingMethod() {
+    public void wrappingMethod(ExtentTest test) {
         try {
-            homePage();
-            secondpageAction();
-            locationTypesInput();
-            specialityInput();
-            serviceTypesInput();
-            buttondirection();
-            secondwindow();
+            homePage(test);
+            secondpageAction(test);
+            locationTypesInput(test);
+            specialityInput(test);
+            serviceTypesInput(test);
+            buttondirection(test);
+            secondwindow(test);
         } catch (Exception e) {
             e.printStackTrace();
         }

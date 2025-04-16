@@ -27,6 +27,7 @@ public class RequestAppointmentActions {
 
     public void clickOnMe(ExtentTest test) {
         driverHelper.waitForClickability(RequestAppointmentLocators.RequestAppointment_Me, 10);
+        Screenshot.screenShotAndHighlight(Base.driver,RequestAppointmentLocators.RequestAppointment_Me,"Me Button");
         driverHelper.hoverAndClick(RequestAppointmentLocators.RequestAppointment_Me);
         test.log(Status.INFO, "Clicked on Me Option ");
     }

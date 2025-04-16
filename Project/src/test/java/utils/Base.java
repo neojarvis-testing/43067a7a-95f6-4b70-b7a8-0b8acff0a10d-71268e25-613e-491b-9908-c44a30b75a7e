@@ -47,15 +47,14 @@ public class Base {
 
         }
     }
-
-    /**
+     /**
      * Author : Harshit Tomar
      * Opens a browser based on the properties file configuration.
      * Initializes the WebDriver and sets up browser options.
      *     
      */
 
-    public void openBrowser() {
+     public void openBrowser() {
 
         try {
             loadProperties();

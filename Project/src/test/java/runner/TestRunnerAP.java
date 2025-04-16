@@ -41,16 +41,16 @@ public class TestRunnerAP extends Base {
 
     // saif
     @Test(priority = 5, enabled = true)
-    public void initializationtask() {
-        test = reports.createTest("Sheet1");
-        HomePageAction action = new HomePageAction();
-        action.wrappingMethod();
+    public void initializationTask() {
+    test = reports.createTest("Test Case 02-HomePage Map");
+    HomePageAction action = new HomePageAction();
+    action.wrappingMethod(test);
     }
 
     // harshit
     @Test(priority = 4, enabled = true)
     public void socialsVerification() {
-        test = reports.createTest("TestCase 07");
+        test = reports.createTest("Test Case 07- HomePage");
         HomePageActions homePageActions = new HomePageActions();
         homePageActions.verifySocialLinks(test);
 
@@ -71,7 +71,7 @@ public class TestRunnerAP extends Base {
         HomePageActions homePageActions = new HomePageActions();
         AppointmentsActions appointmentsActions = new AppointmentsActions();
         RequestAppointmentActions requestAppointmentActions = new RequestAppointmentActions();
-        test = reports.createTest("Testcase 3");
+        test = reports.createTest("Test Case 03-Appointments");
         homePageActions.clickOnSchedule(test);
         appointmentsActions.clickOnRequest(test);
         requestAppointmentActions.requestAppointmentAction(test);
@@ -82,7 +82,7 @@ public class TestRunnerAP extends Base {
     public void testcase2() {
         HomePageActions homePageActions = new HomePageActions();
         FindADoctorActions findADoctorActions = new FindADoctorActions();
-        test = reports.createTest("Testcase 4");
+        test = reports.createTest("Test Case 04-Find a Doctors");
         homePageActions.clickOnFindADoctor(test);
         findADoctorActions.findADoctorAction(test);
     }
@@ -128,7 +128,7 @@ public class TestRunnerAP extends Base {
     @Test(priority = 10,enabled = true)
     public void testCaseTwo() {
        
-        test=reports.createTest("test");        
+        test=reports.createTest("Test Case 09-Services");        
         HomePageActions homePageActions =new HomePageActions();
         homePageActions.institute(test);
         InstituteActions institute=new InstituteActions();
